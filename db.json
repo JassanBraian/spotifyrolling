@@ -1,0 +1,44 @@
+{
+    "usuario": [
+        {
+            "nombreUsuario": "emanuelRojas",
+            "password": "1234",
+            "rol": "admin", 
+            "id": 1
+        },
+        {
+            "nombreUsuario": "lucasSuarez",
+            "password": "1234",
+            "rol": "client", 
+            "id": 2
+        }
+    ],
+    "album":[
+        {
+            "nombre": "nombre",
+            "descripcion": "descripcion",
+            "imgUrl": "https:asd",
+            "musicUrl": "https:asd",
+            "esDestacada": false,
+            "categoria": "folcklore",
+            "id:": 1
+        },
+        {
+            "nombre": "nombre2",
+            "descripcion": "descripcion2",
+            "imgUrl": "https:asd",
+            "musicUrl": "https:asd",
+            "esDestacada": true,
+            "categoria": "destacada",
+            "id:": 2
+        }
+    ],
+    "comentario":[
+        {
+            "email": "bjassan@gmail.com",
+            "mensaje": "...",
+            "fkAlbum": 1,
+            "id": 1
+        }
+    ]
+}
