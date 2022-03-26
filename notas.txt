@@ -1,4 +1,0 @@
-Dudas:
-
-1.  Categoria Destacada y propiedad isDestacada
-2.  Pagina registro - formularios: se puede usar un alert en vez de modal

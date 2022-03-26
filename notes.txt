@@ -1,0 +1,15 @@
+Dudas:
+
+1.  Categoria Destacada y propiedad isDestacada
+2.  Pagina registro - formularios: se puede usar un alert en vez de modal
+
+
+Estructura del proyecto:
+1. docs: archivos de media
+2. src: archivos de sistema
+3. classes: prototipos
+4. components: elementos del DOM a reutilizar
+5. css: estilos bootstrap y propios
+6. js: archivos javacript de bootstrap
+7. ui: funciones referentes a manipulacion de DOM
+8. utils: servicios generales del sistema

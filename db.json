@@ -15,25 +15,23 @@
     ],
     "album":[
         {
-            "nombre": "nombre",
-            "descripcion": "descripcion",
+            "nombre": "Off the Wall",
+            "descrip": "descripcion",
             "imgUrl": "https:asd",
-            "musicUrl": "https:asd",
             "esDestacada": false,
-            "categoria": "folcklore",
+            "categoria": "pop",
             "id:": 1
         },
         {
-            "nombre": "nombre2",
-            "descripcion": "descripcion2",
+            "nombre": "Thriller",
+            "descrip": "descripcion2",
             "imgUrl": "https:asd",
-            "musicUrl": "https:asd",
             "esDestacada": true,
             "categoria": "destacada",
             "id:": 2
         }
     ],
-    "comentario":[
+    "comentario":[  
         {
             "email": "bjassan@gmail.com",
             "mensaje": "...",
