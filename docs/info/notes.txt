@@ -27,6 +27,18 @@ Capas (organización) del desarrollo:
 =================================================
 Manejo de git:
 
+Ramas existentes:
+1. main
+2. dev
+3. devIntegrante
+
 Subir ultimos cambios locales:
-1. 
-2. 
+1. git add . (en rama personal)
+2. git commit -m 'mensaje' (en rama personal)
+3. git push (en rama personal)
+4. git checkout dev 
+5. git pull (en rama dev)
+6. git pull origin devIntegrante (en rama dev)
+7. git push (en rama dev)
+8. git checkout devIntegrante
+
