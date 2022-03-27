@@ -1,0 +1,32 @@
+=================================================
+Dudas:
+1.  Categoria Destacada y propiedad isDestacada
+2.  Pagina registro - formularios: se puede usar un alert en vez de modal
+
+=================================================
+Estructura del proyecto:
+1. docs: archivos de media
+2. src: archivos de sistema
+3. classes: prototipos
+4. components: elementos del DOM a reutilizar
+5. css: estilos bootstrap y propios
+6. db: conexion a json-server
+7. js: archivos javacript de bootstrap
+8. ui: funciones referentes a manipulacion de DOM
+9. utils: servicios generales del sistema
+
+=================================================
+Capas (organización) del desarrollo:
+1. Html: vista, conformado por las etiquetas html. Ubicado en root/raiz de proyecto. Ej admin.html
+2. UI de vista: conformado por los eventos de determinada vista. Ubicado en ui. Ej UIAdmin.js
+3. UI de prototipo: conformado por la manipulacion de DOM de determinado prototipo. Ubicado en ui. Ej UIAlbum.js
+4. Servicio de prototipo: conformado por las funciones de un determinado prototipo. Ubicado en utils. Ej AlbumServices.js
+5. Prototipo de entidad: conformado por constructor con propiedades de la entidad y sus metodos. Ubicado en classes. Ej Album.js
+6. db.json: archivo que es ejecutado por json-server para simular un API. Ubicado en root/raiz de proyecto.
+
+=================================================
+Manejo de git:
+
+Subir ultimos cambios locales:
+1. 
+2. 

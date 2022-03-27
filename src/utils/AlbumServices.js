@@ -1,4 +1,5 @@
 import { API_URL } from '../db/conexion.js';
+import Album from '../classes/Album.js';
 
 class AlbumServices {
     getAlbumes = async () => {
