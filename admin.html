@@ -10,22 +10,36 @@
 </head>
 
 <body>
-    <h1>Panel Admin!</h1>
+    <h1 class="text-center">Panel Admin</h1>
 
-    <h3>Listado de Albumes:</h3>
+    <div class="row">
+        <div class="col">
+            <h3>Listado de Albumes</h3>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#albumModalCreate">
+                Cargar Album
+            </button>
+        </div>
+    </div>
+
     <table class="table table-dark table-hover" id="tableAlbumList">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Portada</th>
-                <th scope="col">Destacada</th>
+                <th scope="col">Destacado</th>
                 <th scope="col">Categoria</th>
+                <th scope="col" class="text-center">Operaciones</th>
             </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
+
+    
+    
 
     <script type="module" src="./src/ui/UIAdmin.js"></script>
     <script src="./src/js/bootstrap.bundle.js"></script>
