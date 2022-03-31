@@ -1,12 +1,14 @@
 import SuperUI from './SuperUI.js';
 import AlbumServices from '../utils/AlbumServices.js';
+import ValidationServices from '../utils/ValidationServices.js';
 import Album from '../classes/Album.js';
 
 const albumServices = new AlbumServices();
+const validationServices = new ValidationServices();
 
 class UIAlbum extends SuperUI {
     addListenersAlbum() {
-        document.addEventListener("click", async function (e) {
+        document.addEventListener('click', async function (e) {
             e.preventDefault();
             if (e.target.classList.contains('btnModalSave')) {
                 const objAlbum = getDataFrmAlbum();
@@ -26,7 +28,32 @@ class UIAlbum extends SuperUI {
             } else if (e.target.classList.contains('btnDeleteAlbum')) {
                 albumServices.deleteAlbum(e.target.id);
             }
-        })
+        });
+
+        document.querySelector('#albumNombre').addEventListener('blur', function (e) {
+            console.log('asd-> ', validationServices.validarString(e.target, 1));
+            (validationServices.validarString(e.target, 1)) ?
+                true : console.log("Mostrar msj error con js");
+        }, true);
+
+        document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
+            validationServices.validarNoEmpty(e.target) && validationServices.validarString(e.target) ?
+                true : console.log("Mostrar msj error con js");
+        }, true);
+
+        document.querySelector('#albumImgUrl').addEventListener('blur', function (e) {
+            validationServices.validarNoEmpty(e.target) && validationServices.validarNoEmpty(e.target) ?
+                true : console.log("Mostrar msj error con js");
+        }, true);
+
+
+        // document.querySelector('#albumDescrip').addEventLister('blur', validarInput);
+        // document.querySelector('#albumImgUrl').addEventLister('blur', validarInput);
+        // document.querySelector('#albumDestacado').addEventLister('blur', validarInput);
+        // document.querySelector('#albumCategoria').addEventLister('blur', validarInput);
+
+
+
     }
 
     buildAlbumList = async () => {
@@ -48,7 +75,7 @@ class UIAlbum extends SuperUI {
                         class="btnEditAlbum btn btn-warning"
                         id=${album.id} 
                         data-bs-toggle="modal" 
-                        data-bs-target="#albumModalCreate"
+                        data-bs-target="#albumModalCrud"
                     >Editar
                     </button>
                     <button 
@@ -68,7 +95,7 @@ class UIAlbum extends SuperUI {
     buildAlbumModalCrud = async () => {
         const div = document.createElement('div');
         div.innerHTML = `
-            <div class="modal fade" id="albumModalCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="albumModalCrud" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -81,26 +108,27 @@ class UIAlbum extends SuperUI {
                                     <input type="text" class="form-control" id="albumId" style="display: none">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                                    <label for="albumNombre1" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" id="albumNombre">
+                                    <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                                    <label for="albumDescrip" class="form-label">Descripcion</label>
                                     <input type="text" class="form-control" id="albumDescrip">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Portada</label>
-                                    <input type="text" class="form-control" id="albumImgUrl">
+                                    <label for="albumImgUrl" class="form-label">Portada</label>
+                                    <input type="url" class="form-control" id="albumImgUrl">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Destacado</label>
+                                    <label for="albumDestacado" class="form-label">Destacado</label>
                                     <select name="selectDestacada" class="form-select" id="albumDestacado">
                                         <option value='true'>Sí</option>
                                         <option value='false'>No</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Categoria</label>
+                                    <label for="albumCategoria" class="form-label">Categoria</label>
                                     <select name="selectCategoria" class="form-select" id="albumCategoria">
                                         <option value='pop'>Pop</option>
                                         <option value='rock'>Rock</option>
@@ -119,9 +147,6 @@ class UIAlbum extends SuperUI {
         `;
         return div;
     }
-
-
-
 
 };
 
@@ -149,6 +174,21 @@ function setDataFrmAlbum(objAlbum) {
     frmAlbum.querySelector('#albumImgUrl').value = objAlbum.imgUrl;
     frmAlbum.querySelector('#albumDestacado').value = objAlbum.esDestacado;
     frmAlbum.querySelector('#albumCategoria').value = objAlbum.categoria;
+}
+
+function validarInput(input) {
+    let res = false;
+    if (validationServices.validarNoEmpty(input)) {
+        if (input.type === 'text') {
+            res = validationServices.validarString(input);
+        } else if (input.type === 'url') {
+            res = validationServices.validarUrl(input);
+        } else if (input.type === 'email') {
+            res = validationServices.validarEmail(input);
+        } else if (input.type === 'email') {
+            res = validationServices.validarEmail(input);
+        }
+    }
 }
 
 export default UIAlbum;
