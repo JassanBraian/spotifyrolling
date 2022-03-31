@@ -4,7 +4,8 @@ class ValidationServices {
 
     validarString = (input, longMin) => {
         !longMin ? longMin = 1 : true;
-        input.value.length >= longMin ? true : false;
+        if(input.value.length >= longMin) return true;
+        else return false;
     }
 
     validarUrl = input => {

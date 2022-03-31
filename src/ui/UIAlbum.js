@@ -31,28 +31,33 @@ class UIAlbum extends SuperUI {
         });
 
         document.querySelector('#albumNombre').addEventListener('blur', function (e) {
-            console.log('asd-> ', validationServices.validarString(e.target, 1));
-            (validationServices.validarString(e.target, 1)) ?
+            validationServices.validarNoEmpty(e.target)
+                && validationServices.validarString(e.target) ?
                 true : console.log("Mostrar msj error con js");
         }, true);
 
         document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
-            validationServices.validarNoEmpty(e.target) && validationServices.validarString(e.target) ?
+            validationServices.validarNoEmpty(e.target)
+                && validationServices.validarString(e.target) ?
                 true : console.log("Mostrar msj error con js");
         }, true);
 
         document.querySelector('#albumImgUrl').addEventListener('blur', function (e) {
-            validationServices.validarNoEmpty(e.target) && validationServices.validarNoEmpty(e.target) ?
+            validationServices.validarNoEmpty(e.target)
+                && validationServices.validarUrl(e.target) ?
                 true : console.log("Mostrar msj error con js");
         }, true);
 
+        document.querySelector('#albumDestacado').addEventListener('blur', function (e) {
+            validationServices.validarNoEmpty(e.target)
+                && validationServices.validarSelectBoolean(e.target) ?
+                true : console.log("Mostrar msj error con js");
+        }, true);
 
-        // document.querySelector('#albumDescrip').addEventLister('blur', validarInput);
-        // document.querySelector('#albumImgUrl').addEventLister('blur', validarInput);
-        // document.querySelector('#albumDestacado').addEventLister('blur', validarInput);
-        // document.querySelector('#albumCategoria').addEventLister('blur', validarInput);
-
-
+        document.querySelector('#albumCategoria').addEventListener('blur', function (e) {
+            validationServices.validarNoEmpty(e.target) ?
+                true : console.log("Mostrar msj error con js");
+        }, true);
 
     }
 
