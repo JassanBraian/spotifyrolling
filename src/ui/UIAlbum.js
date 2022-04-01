@@ -21,6 +21,9 @@ class UIAlbum extends SuperUI {
                 res ? console.log('Ha sido creado/editado correctamente')
                     : console.log('Ocurrio error en create o update album');
 
+            } else if (e.target.classList.contains('btnCreateAlbum')) {
+                document.querySelector('#frmAlbum').reset();
+
             } else if (e.target.classList.contains('btnEditAlbum')) {
                 const objAlbum = await albumServices.getAlbumById(e.target.id);
                 setDataFrmAlbum(await objAlbum);
@@ -81,6 +84,7 @@ class UIAlbum extends SuperUI {
                         id=${album.id} 
                         data-bs-toggle="modal" 
                         data-bs-target="#albumModalCrud"
+                        
                     >Editar
                     </button>
                     <button 
@@ -179,21 +183,6 @@ function setDataFrmAlbum(objAlbum) {
     frmAlbum.querySelector('#albumImgUrl').value = objAlbum.imgUrl;
     frmAlbum.querySelector('#albumDestacado').value = objAlbum.esDestacado;
     frmAlbum.querySelector('#albumCategoria').value = objAlbum.categoria;
-}
-
-function validarInput(input) {
-    let res = false;
-    if (validationServices.validarNoEmpty(input)) {
-        if (input.type === 'text') {
-            res = validationServices.validarString(input);
-        } else if (input.type === 'url') {
-            res = validationServices.validarUrl(input);
-        } else if (input.type === 'email') {
-            res = validationServices.validarEmail(input);
-        } else if (input.type === 'email') {
-            res = validationServices.validarEmail(input);
-        }
-    }
 }
 
 export default UIAlbum;
