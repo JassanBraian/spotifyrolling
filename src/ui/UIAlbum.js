@@ -9,9 +9,10 @@ const validationServices = new ValidationServices();
 class UIAlbum extends SuperUI {
     addListenersAlbum() {
         document.addEventListener('click', async function (e) {
-            e.preventDefault();
-            if (e.target.classList.contains('btnModalSave')) {
+
+            if (e.target.classList.contains('btnModalAlbumSave')) {
                 const objAlbum = getDataFrmAlbum();
+                console.log(objAlbum);
                 let res = '';
                 !objAlbum.id ?
                     res = await albumServices.createAlbum(objAlbum)
@@ -34,32 +35,20 @@ class UIAlbum extends SuperUI {
         });
 
         document.querySelector('#albumNombre').addEventListener('blur', function (e) {
-            validationServices.validarNoEmpty(e.target)
-                && validationServices.validarString(e.target) ?
-                true : console.log("Mostrar msj error con js");
+            validationServices.validarString(e.target) ?
+                validarFrmAlbumCompleto() : console.log("Mostrar msj error con js");
         }, true);
 
         document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
-            validationServices.validarNoEmpty(e.target)
-                && validationServices.validarString(e.target) ?
+            validationServices.validarString(e.target) ?
                 true : console.log("Mostrar msj error con js");
+            validarFrmAlbumCompleto();
         }, true);
 
         document.querySelector('#albumImgUrl').addEventListener('blur', function (e) {
-            validationServices.validarNoEmpty(e.target)
-                && validationServices.validarUrl(e.target) ?
+            validationServices.validarImgUrl(e.target) ?
                 true : console.log("Mostrar msj error con js");
-        }, true);
-
-        document.querySelector('#albumDestacado').addEventListener('blur', function (e) {
-            validationServices.validarNoEmpty(e.target)
-                && validationServices.validarSelectBoolean(e.target) ?
-                true : console.log("Mostrar msj error con js");
-        }, true);
-
-        document.querySelector('#albumCategoria').addEventListener('blur', function (e) {
-            validationServices.validarNoEmpty(e.target) ?
-                true : console.log("Mostrar msj error con js");
+            validarFrmAlbumCompleto();
         }, true);
 
     }
@@ -75,7 +64,7 @@ class UIAlbum extends SuperUI {
                 <td>${album.nombre}</td>
                 <td>${album.descrip}</td>
                 <td>${album.imgUrl}</td>
-                <td>${album.esDestacado}</td>
+                <td>${album.esDestacado ? 'Si' : 'No'}</td>
                 <td>${album.categoria}</td>
                 <td class="text-center">
                     <button 
@@ -84,7 +73,6 @@ class UIAlbum extends SuperUI {
                         id=${album.id} 
                         data-bs-toggle="modal" 
                         data-bs-target="#albumModalCrud"
-                        
                     >Editar
                     </button>
                     <button 
@@ -147,8 +135,19 @@ class UIAlbum extends SuperUI {
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btnModalSave btn btn-primary">Save changes</button>
+                            <button 
+                                type="button" 
+                                class="btn btn-secondary" 
+                                data-bs-dismiss="modal"
+                            >Cancel
+                            </button>
+                            <button 
+                                type="button" 
+                                class="btnModalAlbumSave btn btn-primary"
+                                id="btnModalAlbumSave" 
+                                disabled='true'
+                            >Save changes
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -183,6 +182,21 @@ function setDataFrmAlbum(objAlbum) {
     frmAlbum.querySelector('#albumImgUrl').value = objAlbum.imgUrl;
     frmAlbum.querySelector('#albumDestacado').value = objAlbum.esDestacado;
     frmAlbum.querySelector('#albumCategoria').value = objAlbum.categoria;
+}
+
+function validarFrmAlbumCompleto() {
+    const btnSave = document.querySelector('#btnModalAlbumSave');
+    if (validationServices.validarString(frmAlbum.querySelector('#albumNombre'))
+        && validationServices.validarString(frmAlbum.querySelector('#albumDescrip'))
+        && validationServices.validarImgUrl(frmAlbum.querySelector('#albumImgUrl'))
+        && validationServices.validarSelectBoolean(frmAlbum.querySelector('#albumDestacado'))
+        && validationServices.validarNoEmpty(frmAlbum.querySelector('#albumCategoria'))) {
+        btnSave.disabled = false;
+        return true;
+    } else {
+        btnSave.disabled = true;
+        return false;
+    }
 }
 
 export default UIAlbum;

@@ -17,7 +17,7 @@
     {
       "nombre": "Off the Wall",
       "descrip": "descripcion",
-      "imgUrl": "https:asd",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
       "esDestacado": false,
       "categoria": "pop",
       "id": 1
@@ -25,10 +25,50 @@
     {
       "nombre": "Thriller",
       "descrip": "descripcion2",
-      "imgUrl": "https:asd",
-      "esDestacado": true,
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
       "categoria": "pop",
       "id": 2
+    },
+    {
+      "nombre": "asd",
+      "descrip": "asd",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "pop",
+      "id": 3
+    },
+    {
+      "nombre": "asd",
+      "descrip": "asd",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "pop",
+      "id": 4
+    },
+    {
+      "nombre": "asd",
+      "descrip": "asd",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "pop",
+      "id": 5
+    },
+    {
+      "nombre": "asd",
+      "descrip": "asd",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "pop",
+      "id": 6
+    },
+    {
+      "nombre": "a1",
+      "descrip": "a1",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "id": 7
     }
   ],
   "comentario": [
