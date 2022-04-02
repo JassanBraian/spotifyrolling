@@ -18,7 +18,7 @@
       "nombre": "Off the Wall",
       "descrip": "descripcion",
       "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
-      "esDestacado": false,
+      "esDestacado": true,
       "categoria": "pop",
       "id": 1
     },

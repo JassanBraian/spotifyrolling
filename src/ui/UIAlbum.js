@@ -6,13 +6,13 @@ import Album from '../classes/Album.js';
 const albumServices = new AlbumServices();
 const validationServices = new ValidationServices();
 
+let albumDeleteId = 0;
+
 class UIAlbum extends SuperUI {
     addListenersAlbum() {
         document.addEventListener('click', async function (e) {
-
             if (e.target.classList.contains('btnModalAlbumSave')) {
                 const objAlbum = getDataFrmAlbum();
-                console.log(objAlbum);
                 let res = '';
                 !objAlbum.id ?
                     res = await albumServices.createAlbum(objAlbum)
@@ -30,7 +30,10 @@ class UIAlbum extends SuperUI {
                 setDataFrmAlbum(await objAlbum);
 
             } else if (e.target.classList.contains('btnDeleteAlbum')) {
-                albumServices.deleteAlbum(e.target.id);
+                albumDeleteId = e.target.id;
+
+            } else if (e.target.classList.contains('btnModalConfirmDelete')) {
+                albumServices.deleteAlbum(albumDeleteId);
             }
         });
 
@@ -79,6 +82,8 @@ class UIAlbum extends SuperUI {
                         type="button" 
                         class="btnDeleteAlbum btn btn-danger"
                         id=${album.id} 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#modalConfirmDelete"
                         >Eliminar
                     </button>
                 </td>

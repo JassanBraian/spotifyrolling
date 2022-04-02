@@ -20,5 +20,6 @@
   },
   "homepage": "https://github.com/JassanBraian/spotifyrolling#readme",
   "dependencies": {
+    "bootstrap": "^5.1.3"
   }
 }
