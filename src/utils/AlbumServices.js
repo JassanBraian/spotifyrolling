@@ -72,6 +72,27 @@ class AlbumServices {
             throw error;
         }
     }
+
+    changeDestacadoAlbum = async (updateAlbum, destacado) => {
+        try {
+            await fetch(`${API_URL}/album/${updateAlbum.id}`, {
+                method: "PUT",
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nombre: updateAlbum.nombre,
+                    descrip: updateAlbum.descrip,
+                    imgUrl: updateAlbum.imgUrl,
+                    esDestacado: destacado,
+                    categoria: updateAlbum.categoria
+                })
+            });
+            return true;
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 export default AlbumServices;

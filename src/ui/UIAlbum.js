@@ -34,6 +34,10 @@ class UIAlbum extends SuperUI {
 
             } else if (e.target.classList.contains('btnModalConfirmDelete')) {
                 albumServices.deleteAlbum(albumDeleteId);
+
+            } else if (e.target.classList.contains('btnChangeDestacAlbum')) {
+                const album = await albumServices.getAlbumById(e.target.id);
+                await albumServices.changeDestacadoAlbum(album, !album.esDestacado);
             }
         });
 
@@ -70,6 +74,12 @@ class UIAlbum extends SuperUI {
                 <td>${album.esDestacado ? 'Si' : 'No'}</td>
                 <td>${album.categoria}</td>
                 <td class="text-center">
+                    <button 
+                        type="button" 
+                        class="btnChangeDestacAlbum btn btn-primary"
+                        id=${album.id} 
+                    >${album.esDestacado ? 'Qui Dest' : 'Destacar'}
+                    </button>
                     <button 
                         type="button" 
                         class="btnEditAlbum btn btn-warning"
