@@ -33,12 +33,14 @@ Ramas existentes:
 3. devIntegrante
 
 Subir ultimos cambios locales:
-1. git add . (en rama personal)
-2. git commit -m 'mensaje' (en rama personal)
-3. git push (en rama personal)
-4. git checkout dev 
-5. git pull (en rama dev)
-6. git pull origin devIntegrante (en rama dev)
-7. git push (en rama dev)
-8. git checkout devIntegrante
+01. git add . (en rama personal)
+02. git commit -m 'mensaje' (en rama personal)
+03. git push (en rama personal)
+04. git checkout dev 
+05. git pull (en rama dev)
+06. git pull origin devIntegrante (en rama dev)
+07. git push (en rama dev)
+08. git checkout devIntegrante
+09. git pull origin dev
+10. git push
 
