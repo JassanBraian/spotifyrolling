@@ -11,6 +11,8 @@ let albumDeleteId = 0;
 class UIAlbum extends SuperUI {
     addListenersAlbum() {
         document.addEventListener('click', async function (e) {
+            e.preventDefault();
+
             if (e.target.classList.contains('btnModalAlbumSave')) {
                 const objAlbum = getDataFrmAlbum();
                 let res = '';

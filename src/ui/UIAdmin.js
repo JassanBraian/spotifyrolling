@@ -7,7 +7,7 @@ const tbodyAlbumList = document.querySelector('#tableAlbumList').getElementsByTa
 addListenersAdmin();
 
 function addListenersAdmin() {
-    document.addEventListener("DOMContentLoaded", async e => {
+    document.addEventListener("DOMContentLoaded", async function (e) {
         tbodyAlbumList.append(...await uiAlbum.buildAlbumList());
         document.body.append(await uiAlbum.buildAlbumModalCrud());
         document.body.append(await
