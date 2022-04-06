@@ -1,10 +1,10 @@
 class Album {
-    constructor(nombre, descrip, imgUrl, esDestacada, categoria) {
-        this.id = Date.now();
+    constructor(id, nombre, descrip, imgUrl, esDestacado, categoria) {
+        this.id = id;
         this.nombre = nombre;
         this.descrip = descrip;
         this.imgUrl = imgUrl;
-        this.esDestacada = esDestacada;
+        this.esDestacado = esDestacado;
         this.categoria = categoria;
     }
 }

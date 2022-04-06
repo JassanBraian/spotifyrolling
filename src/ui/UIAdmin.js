@@ -6,10 +6,21 @@ const tbodyAlbumList = document
   .querySelector("#tableAlbumList")
   .getElementsByTagName("tbody")[0];
 
-addListeners();
+addListenersAdmin();
 
-function addListeners() {
-  document.addEventListener("DOMContentLoaded", async (e) => {
+function addListenersAdmin() {
+  document.addEventListener("DOMContentLoaded", async function (e) {
     tbodyAlbumList.append(...(await uiAlbum.buildAlbumList()));
+    document.body.append(await uiAlbum.buildAlbumModalCrud());
+    document.body.append(
+      await uiAlbum.buildModalConfirm(
+        "modalConfirmDelete",
+        "Advertencia",
+        "Seguro desea borrar el Album?",
+        "btnModalConfirmDelete"
+      )
+    );
+
+    uiAlbum.addListenersAlbum();
   });
 }
