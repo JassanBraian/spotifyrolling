@@ -1,6 +1,1 @@
-node_modules/
-*.log
-.env
-package.json
-package-lock.json
-db.json
+/node_modules
