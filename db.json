@@ -1,48 +1,48 @@
 {
-    "usuario": [
-        {
-            "nombreUsuario": "emanuelRojas",
-            "password": "1234",
-            "rol": "admin", 
-            "id": 1
-        },
-        {
-            "nombreUsuario": "lucasSuarez",
-            "password": "1234",
-            "rol": "client", 
-            "id": 2
-        }
-    ],
-    "album":[
-        {
-            "nombre": "Off the Wall",
-            "descrip": "descripcion",
-            "imgUrl": "https:asd",
-            "esDestacada": false,
-            "categoria": "pop",
-            "id:": 1
-        },
-        {
-            "nombre": "Thriller",
-            "descrip": "descripcion2",
-            "imgUrl": "https:asd",
-            "esDestacada": true,
-            "categoria": "destacada",
-            "id:": 2
-        }
-    ],
-    "comentario":[  
-        {
-            "email": "bjassan@gmail.com",
-            "mensaje": "...",
-            "fkAlbum": 1,
-            "id": 1
-        },
-        {
-            "email": "bjassan@gmail.com",
-            "mensaje": "...",
-            "fkAlbum": 1,
-            "id": 1
-        }
-    ]
+  "usuario": [
+    {
+      "nombreUsuario": "emanuelRojas",
+      "password": "1234",
+      "rol": "admin",
+      "id": 1
+    },
+    {
+      "nombreUsuario": "lucasSuarez",
+      "password": "1234",
+      "rol": "client",
+      "id": 2
+    }
+  ],
+  "album": [
+    {
+      "nombre": "Off the Wall",
+      "descrip": "descripcion",
+      "imgUrl": "https:asd",
+      "esDestacada": false,
+      "categoria": "pop",
+      "id:": 1
+    },
+    {
+      "nombre": "Thriller",
+      "descrip": "descripcion2",
+      "imgUrl": "https:asd",
+      "esDestacada": true,
+      "categoria": "destacada",
+      "id:": 2
+    }
+  ],
+  "comentario": [
+    {
+      "email": "bjassan@gmail.com",
+      "mensaje": "...",
+      "fkAlbum": 1,
+      "id": 1
+    },
+    {
+      "email": "bjassan@gmail.com",
+      "mensaje": "...",
+      "fkAlbum": 1,
+      "id": 1
+    }
+  ]
 }
