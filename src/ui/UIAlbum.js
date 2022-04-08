@@ -5,6 +5,7 @@ import Album from '../classes/Album.js';
 
 const albumServices = new AlbumServices();
 const validationServices = new ValidationServices();
+const superUI = new SuperUI();
 
 let albumDeleteId = 0;
 
@@ -44,20 +45,27 @@ class UIAlbum extends SuperUI {
         });
 
         document.querySelector('#albumNombre').addEventListener('blur', function (e) {
-            validationServices.validarString(e.target) ?
-                validarFrmAlbumCompleto() : console.log("Mostrar msj error con js");
+            const errorElem = e.target.parentElement.querySelector('.form-text');
+            if (validationServices.validarString(e.target)) {
+                superUI.showHideElement(errorElem, false);
+                validarFrmAlbumCompleto();
+            } else superUI.showHideElement(errorElem, true);
         }, true);
 
         document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
-            validationServices.validarString(e.target) ?
-                true : console.log("Mostrar msj error con js");
-            validarFrmAlbumCompleto();
+            const errorElem = e.target.parentElement.querySelector('.form-text');
+            if (validationServices.validarString(e.target)) {
+                superUI.showHideElement(errorElem, false);
+                validarFrmAlbumCompleto();
+            } else superUI.showHideElement(errorElem, true);
         }, true);
 
         document.querySelector('#albumImgUrl').addEventListener('blur', function (e) {
-            validationServices.validarImgUrl(e.target) ?
-                true : console.log("Mostrar msj error con js");
-            validarFrmAlbumCompleto();
+            const errorElem = e.target.parentElement.querySelector('.form-text');
+            if (validationServices.validarImgUrl(e.target)) {
+                superUI.showHideElement(errorElem, false);
+                validarFrmAlbumCompleto();
+            } else superUI.showHideElement(errorElem, true);
         }, true);
 
     }
@@ -122,17 +130,19 @@ class UIAlbum extends SuperUI {
                                     <input type="text" class="form-control" id="albumId" style="display: none">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="albumNombre1" class="form-label">Nombre</label>
+                                    <label for="albumNombre" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" id="albumNombre">
                                     <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="albumDescrip" class="form-label">Descripcion</label>
                                     <input type="text" class="form-control" id="albumDescrip">
+                                    <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="albumImgUrl" class="form-label">Portada</label>
                                     <input type="url" class="form-control" id="albumImgUrl">
+                                    <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="albumDestacado" class="form-label">Destacado</label>

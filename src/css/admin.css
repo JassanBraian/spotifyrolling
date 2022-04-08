@@ -1,0 +1,24 @@
+/* RESET RULES 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    --lightgray: #efefef;
+    --white: #fff;
+    --black: rgba(0, 0, 0, 0.8);
+    --blue: #0075ff;
+    --error: #F66060;
+    --red: #bb2929;
+    --verde: #17be08;
+    --verde2: #1ed12d;
+    --verde3: #119200;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+  }

@@ -1,4 +1,8 @@
 class SuperUI {
+    showHideElement(element, show) {
+        show ? element.style = '' : element.style = 'display: none';
+    }
+
     buildModalConfirm = async (modalConfirmId, title, msj, btnConfirmName) => {
         const div = document.createElement('div');
         div.innerHTML = `
