@@ -22,14 +22,11 @@ h1{
     height: 100px;
 }
 @media screen and (max-width:600px){
-    .titulo h1{
-        font-size: 10px;
-        top: 5px;
-       
-    }
-    .titulo{
-        height: 5rem;
-    }
+    h1.titulo{
+        font-size: 3rem;
+        margin-top: 5px;
+          }
+  
 }
 
 .member-container{
