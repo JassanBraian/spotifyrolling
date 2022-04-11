@@ -22,3 +22,29 @@
     cursor: pointer;
     border: none;
   }
+
+  /* ESTILOS PARA VALIDACION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.form-control {
+  color: var(--verde2);
+  opacity: 1;
+}
+
+
+.input-correcto .form-validacion-estado {
+  color: var(--verde2);
+  opacity: 1;
+}
+
+.input-incorrecto .form-label {
+  color: var(--red);
+}
+
+.form-group-incorrecto .form-validacion-estado {
+  color: var(--red);
+  opacity: 1;
+}
+
+.form-group-incorrecto .form-input {
+  border: 3px solid var(--red);
+}

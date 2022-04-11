@@ -60,12 +60,17 @@ class UIAlbum extends SuperUI {
             }
         });
 
-        document.querySelector('#albumNombre').addEventListener('input', function (e) {
+        document.querySelector('#albumNombre').addEventListener('blur', function (e) {
             const errorElem = e.target.parentElement.querySelector('.form-text');
+            console.log(e.target)
             if (validationServices.validarString(e.target)) {
                 superUI.showHideElement(errorElem, false);
+                superUI.addRemoveStyleInputValidat(e.target, true);
                 validarFrmAlbumCompleto();
-            } else superUI.showHideElement(errorElem, true);
+            } else {
+                superUI.showHideElement(errorElem, true);
+                superUI.addRemoveStyleInputValidat(e.target, false);
+            }
         }, true);
 
         document.querySelector('#albumDescrip').addEventListener('input', function (e) {
@@ -145,11 +150,15 @@ class UIAlbum extends SuperUI {
                                 <div class="mb-3">
                                     <input type="text" class="form-control" id="albumId" style="display: none">
                                 </div>
+
                                 <div class="mb-3">
                                     <label for="albumNombre" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" id="albumNombre">
                                     <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
+
+
+
                                 <div class="mb-3">
                                     <label for="albumDescrip" class="form-label">Descripcion</label>
                                     <input type="text" class="form-control" id="albumDescrip">
