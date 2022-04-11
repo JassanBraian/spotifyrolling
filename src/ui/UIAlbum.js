@@ -2,6 +2,7 @@ import SuperUI from './SuperUI.js';
 import AlbumServices from '../utils/AlbumServices.js';
 import ValidationServices from '../utils/ValidationServices.js';
 import Album from '../classes/Album.js';
+import Swal from '../../node_modules/sweetalert2/src/sweetalert2.js';
 
 const albumServices = new AlbumServices();
 const validationServices = new ValidationServices();
@@ -22,8 +23,22 @@ class UIAlbum extends SuperUI {
                     :
                     res = await albumServices.updateAlbum(objAlbum);
 
-                res ? console.log('Ha sido creado/editado correctamente')
-                    : console.log('Ocurrio error en create o update album');
+                res ?
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Aviso',
+                        text: 'La operación fue realizada con éxito',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    :
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Ocurrió un error al realizar la operación!',
+                        footer: '<a href="">Why do I have this issue?</a>'
+                    });
 
             } else if (e.target.classList.contains('btnCreateAlbum')) {
                 document.querySelector('#frmAlbum').reset();
@@ -41,10 +56,11 @@ class UIAlbum extends SuperUI {
             } else if (e.target.classList.contains('btnChangeDestacAlbum')) {
                 const album = await albumServices.getAlbumById(e.target.id);
                 await albumServices.changeDestacadoAlbum(album, !album.esDestacado);
+
             }
         });
 
-        document.querySelector('#albumNombre').addEventListener('blur', function (e) {
+        document.querySelector('#albumNombre').addEventListener('input', function (e) {
             const errorElem = e.target.parentElement.querySelector('.form-text');
             if (validationServices.validarString(e.target)) {
                 superUI.showHideElement(errorElem, false);
@@ -52,7 +68,7 @@ class UIAlbum extends SuperUI {
             } else superUI.showHideElement(errorElem, true);
         }, true);
 
-        document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
+        document.querySelector('#albumDescrip').addEventListener('input', function (e) {
             const errorElem = e.target.parentElement.querySelector('.form-text');
             if (validationServices.validarString(e.target)) {
                 superUI.showHideElement(errorElem, false);
@@ -60,7 +76,7 @@ class UIAlbum extends SuperUI {
             } else superUI.showHideElement(errorElem, true);
         }, true);
 
-        document.querySelector('#albumImgUrl').addEventListener('blur', function (e) {
+        document.querySelector('#albumImgUrl').addEventListener('input', function (e) {
             const errorElem = e.target.parentElement.querySelector('.form-text');
             if (validationServices.validarImgUrl(e.target)) {
                 superUI.showHideElement(errorElem, false);
@@ -156,7 +172,7 @@ class UIAlbum extends SuperUI {
                                     <select name="selectCategoria" class="form-select" id="albumCategoria">
                                         <option value='pop'>Pop</option>
                                         <option value='rock'>Rock</option>
-                                        <option value='destacado'>Destacado</option>
+                                        <option value='latino'>Latino</option>
                                     </select>
                                 </div>
                             </form>
