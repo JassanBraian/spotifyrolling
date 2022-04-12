@@ -1,16 +1,28 @@
 {
-  "usuario": [
+  "usuarios": [
     {
-      "nombreUsuario": "emanuelRojas",
-      "password": "1234",
+      "nombre": "Emanuel Rojas",
+      "usuario": "emanuelRojas",
+      "correo": "emanuelRojas@gmail.com",
+      "password": "12345678",
       "rol": "admin",
       "id": 1
     },
     {
-      "nombreUsuario": "lucasSuarez",
-      "password": "1234",
+      "nombre": "Lucas Suarez",
+      "usuario": "lucasSuarez",
+      "correo": "lucasSuarez@gmail.com",
+      "password": "12345678",
       "rol": "client",
       "id": 2
+    },
+    {
+      "nombre": "Fernando Alexis",
+      "usuario": "killians",
+      "correo": "vale.alexis18@gmail.com",
+      "password": "12345678",
+      "rol": "client",
+      "id": 3
     }
   ],
   "album": [
