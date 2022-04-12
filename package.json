@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/JassanBraian/spotifyrolling#readme",
   "dependencies": {
+    "json-server": "^0.17.0",
     "bootstrap": "^5.1.3"
   }
 }
