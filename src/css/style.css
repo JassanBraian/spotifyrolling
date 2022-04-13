@@ -12,12 +12,32 @@ body {
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh; */
+  overflow-x: hidden;
+}
+/* scroll behavour */
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: gray; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid black; /* creates padding around scroll thumb */
+}
+
+/* tocando el main */
+.main-container {
+  justify-content: flex- !important ;
 }
 .sidebar {
   float: left;
-  width: 100vw;
-  padding: 10px;
-  height: 100%;
+  width: 100%;
+  /* padding: 10px; */
+  height: 100vh;
   overflow-y: auto;
   background-color: black;
   overflow-x: hidden;
@@ -65,11 +85,12 @@ body {
   font-size: 14px;
   padding: 0 10px;
 }
-/* Modificacion unica de añadir playlist */
+/* Modificacion unica de añadir playlist poner list none */
 .sidebar_menu_create {
   padding: 0 20px 20px;
   color: white;
 }
+
 .sidebar_playlists {
   padding: 20px 0;
   border-top: 1px solid white;
@@ -82,84 +103,35 @@ body {
   text-decoration: none;
   padding-left: 1rem;
 }
-/* Creando menu hamburguesa con el side bar lateral (izq) */
-.menu-btn {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  border: 3px solid black;
-}
 
-.menu-btn_burguer {
-  width: 50px;
-  height: 100px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-  transition: all 0.5s ease-in-out;
-}
-
-.menu-btn_burguer::before,
-.menu-btn_burguer::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 6px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-  transition: all 0.5s ease-in-out;
-}
-.menu-btn_burguer::before {
-  transform: translateY(16px);
-}
-
-/* ANIMACION DEL BOTON HAMBURGUESA */
-
-.menu-btn.open .menu-btn_burguer {
-  transform: translateY(-50px);
-  background: transparent;
-  box-shadow: none;
-}
-
-.menu-btn.open .menu-btn_burguer::before {
-  transform: rotate(45deg) translate(35px, -35px);
-}
-.menu-btn.open .menu-btn_burguer::after {
-  transform: rotate(-45deg) translate(35px, -35px);
-}
-
-/* MAIN CONTAINER */
-.bob-pic {
+/* .bob-pic {
   height: auto;
   width: 100%;
   background-size: cover;
-}
+} */
+/* Footer edit */
 .footer-container {
   background-color: #212529;
   height: auto;
   color: pink;
-
-  width: 100vw;
+  /* width: 100vw; */
 }
+
 .used-links-list {
   list-style-type: none;
   text-align: center;
 }
-
-/* creando boton  */
+/* Adaptacion de hero image en desktop */
 .img-container {
   background-image: url(../images/bckg.jpg);
   height: 100%;
   width: 100%;
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
+  background-position: left;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow-x: hidden;
+  /* display: none; */
 }
 
 .inner-container {
@@ -183,4 +155,44 @@ h2 {
   font-weight: 400;
 }
 
-/* footer styles */
+/* Responsive web designe */
+/* @media screen and (max-width: 390px) {
+  .sidebar {
+    display: none;
+  }
+  .img-container {
+    height: 600px;
+    width: 390px;
+    overflow-x: hidden;
+  }
+  h1,
+  h2 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: -20px;
+  }
+} */
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .img-container {
+    height: 600px;
+    width: 390px;
+    overflow-x: hidden;
+  }
+  h1,
+  h2 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: -20px;
+  }
+}
+
+/* @media (min-width: 575px) {
+  .img-container {
+    height: 100%;
+    /* width: 900px; */
+/* overflow-x: hidden;
+  }
+} */
