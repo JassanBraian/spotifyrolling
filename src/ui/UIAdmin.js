@@ -13,7 +13,7 @@ addListenersAdmin();
 function addListenersAdmin() {
     document.addEventListener("DOMContentLoaded", async function (e) {
 
-        //localStorage.setItem('userLogged', JSON.stringify({ nombreUsuario: 'emanuelRojas' }));
+        localStorage.setItem('userLogged', JSON.stringify({ nombreUsuario: 'emanuelRojas' }));
         await userServices.validateUserLoggedRolAdmin() ? true :
             window.location.href = "index.html";
 

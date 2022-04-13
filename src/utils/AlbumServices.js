@@ -31,7 +31,7 @@ class AlbumServices {
         }
     }
 
-    getAlbumsDestacados = async => {
+    getAlbumsDestacados = async () => {
         try {
             const response = await fetch(`${API_URL}/album`);
             const data = await response.json();
