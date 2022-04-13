@@ -1,4 +1,22 @@
 class SuperUI {
+    showHideElement(element, show) {
+        show ? element.style = '' : element.style = 'display: none';
+    }
+
+    addRemoveStyleInputValidat(element, state){
+        if(state){
+            element.classList.remove('input-incorrecto');
+            element.classList.add('input-correcto');
+            element.classList.add('fa-check-circle');
+            element.classList.remove('fa-times-circle');
+        } else {
+            element.classList.add('input-incorrecto');
+            element.classList.remove('input-correcto');            
+            element.classList.remove('fa-check-circle');
+            element.classList.add('fa-times-circle');
+        }
+    }
+
     buildModalConfirm = async (modalConfirmId, title, msj, btnConfirmName) => {
         const div = document.createElement('div');
         div.innerHTML = `

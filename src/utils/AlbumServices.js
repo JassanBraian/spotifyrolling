@@ -21,6 +21,26 @@ class AlbumServices {
         }
     }
 
+    getAlbumsByCategory = async category => {
+        try {
+            const response = await fetch(`${API_URL}/album`);
+            const data = await response.json();
+            return data.filter(album => album.categoria = category);
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    getAlbumsDestacados = async () => {
+        try {
+            const response = await fetch(`${API_URL}/album`);
+            const data = await response.json();
+            return data.filter(album => album.destacado);
+        } catch (error) {
+            throw error;
+        }
+    }
+
     createAlbum = async newAlbum => {
         try {
             await fetch(`${API_URL}/album`, {
@@ -36,7 +56,6 @@ class AlbumServices {
                     categoria: newAlbum.categoria
                 })
             });
-            return true;
         } catch (error) {
             throw error;
         }
@@ -57,7 +76,6 @@ class AlbumServices {
                     categoria: updateAlbum.categoria
                 })
             });
-            return true;
         } catch (error) {
             throw error;
         }

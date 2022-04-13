@@ -5,22 +5,22 @@ const uiAlbum = new UIAlbum();
 const userServices = new UserServices();
 
 const tbodyAlbumList = document
-  .querySelector("#tableAlbumList")
-  .getElementsByTagName("tbody")[0];
+    .querySelector("#tableAlbumList")
+    .getElementsByTagName("tbody")[0];
 
 addListenersAdmin();
 
 function addListenersAdmin() {
     document.addEventListener("DOMContentLoaded", async function (e) {
-        
-        //localStorage.setItem('userLogged', JSON.stringify({nombreUsuario: 'emanuelRojas'}));
-        await userServices.validateUserLoggedRolAdmin() ? true : 
+
+        localStorage.setItem('userLogged', JSON.stringify({ nombreUsuario: 'emanuelRojas' }));
+        await userServices.validateUserLoggedRolAdmin() ? true :
             window.location.href = "index.html";
 
         tbodyAlbumList.append(...await uiAlbum.buildAlbumList());
         document.body.append(await uiAlbum.buildAlbumModalCrud());
-        document.body.append(await
-            uiAlbum.buildModalConfirm('modalConfirmDelete', 'Advertencia',
+        document.body.append(
+            await uiAlbum.buildModalConfirm('modalConfirmDelete', 'Advertencia',
                 'Seguro desea borrar el Album?', 'btnModalConfirmDelete'));
 
         uiAlbum.addListenersAlbum();
