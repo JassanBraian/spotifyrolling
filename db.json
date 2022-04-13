@@ -27,7 +27,8 @@
   ],
   "album": [
     {
-      "nombre": "Off the Wall",
+      "nombre": "Purple Rain",
+      "artista":"Prince",
       "descrip": "descripcion1",
       "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
       "esDestacado": false,
@@ -36,12 +37,158 @@
     },
     {
       "nombre": "Thriller",
+      "artista":"Michael Jackson",
       "descrip": "descripcion2",
       "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
       "esDestacado": false,
       "categoria": "pop",
       "id": 2
+    },
+    {
+      "nombre": "Future Nostalgia",
+      "artista":"Dua Lipa",
+      "descrip": "descripcion2",
+      "imgUrl": "https://pbs.twimg.com/media/EennuV_UMAEWe3S?format=jpg&name=900x900",
+      "esDestacado": true,
+      "categoria": "pop",
+      "id": 3
+    },
+    {
+      "nombre": "Baby one more time",
+      "artista":"Britney Spears",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": true,
+      "categoria": "pop",
+      "id": 4
+    },
+    {
+      "nombre": "Ray of light",
+      "artista":"Madonna",
+      "descrip": "descripcion2",
+      "imgUrl": "https://pbs.twimg.com/media/EennuV_UMAEWe3S?format=jpg&name=900x900",
+      "esDestacado": false,
+      "categoria": "pop",
+      "id": 5
+    },
+    {
+      "nombre": "Millenium",
+      "artista":"Backstreet Boys",
+      "descrip": "descripcion2",
+      "imgUrl": "https://pbs.twimg.com/media/EennuV_UMAEWe3S?format=jpg&name=900x900",
+      "esDestacado": true,
+      "categoria": "pop",
+      "id": 6
+    },
+    {
+      "nombre": "In Utero",
+      "artista":"Nirvana",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "rock",
+      "id": 7
+    },
+    {
+      "nombre": "London Calling",
+      "artista":"The Clash",
+      "descrip": "descripcion2",
+      "imgUrl": "https://www.todorock.com/wp-content/uploads/2019/09/the-clash-london-calling-1200x1193.jpg",
+      "esDestacado": false,
+      "categoria": "rock",
+      "id": 8
+    },
+    {
+      "nombre": "Ten",
+      "artista":"Pearl Jam",
+      "descrip": "descripcion2",
+      "imgUrl": "https://kxt.org/wp-content/uploads/2016/08/Pearl-Jam.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "id": 9
+    },
+    {
+      "nombre": "Use Your Illusion",
+      "artista":"Guns & Roses",
+      "descrip": "descripcion2",
+      "imgUrl": "https://m.media-amazon.com/images/I/71cPYP4T32L._SX425_.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "id": 10
+    },
+    {
+      "nombre": "Vodoo Lounge",
+      "artista":"The Rolling Stones",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "id": 11
+    },
+    {
+      "nombre": "Back in black",
+      "artista":"AC/DC",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "id": 12
+    },
+    {
+      "nombre": "Corazon Partio",
+      "artista":"Alejandro Sanz",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "latino",
+      "id": 13
+    },
+    {
+      "nombre": "Livin la vida loca",
+      "artista":"Ricky Martin",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": true,
+      "categoria": "latino",
+      "id": 14
+    },
+    {
+      "nombre": "Pies descalzos",
+      "artista":"Shakira",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": true,
+      "categoria": "latino",
+      "id": 15
+    },
+    {
+      "nombre": "Romance",
+      "artista":"Luis Miguel",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "latino",
+      "id": 16
+    },
+    {
+      "nombre": "Revolucion de amor",
+      "artista":"Mana",
+      "descrip": "descripcion2",
+      "imgUrl": "https://cdns-images.dzcdn.net/images/cover/e3c9921c9fd4855ea23d947e880cac12/500x500.jpg",
+      "esDestacado": true,
+      "categoria": "latino",
+      "id": 17
+    },
+    {
+      "nombre": "Arrasando",
+      "artista":"Thalia",
+      "descrip": "descripcion2",
+      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "esDestacado": false,
+      "categoria": "latino",
+      "id": 18
     }
+    
   ],
   "comentario": [
     {

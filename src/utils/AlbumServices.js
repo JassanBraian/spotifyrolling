@@ -25,7 +25,7 @@ class AlbumServices {
         try {
             const response = await fetch(`${API_URL}/album`);
             const data = await response.json();
-            return data.filter(album => album.categoria = category);
+            return data.filter(album => album.categoria === category);
         } catch (error) {
             throw error;
         }
@@ -35,7 +35,7 @@ class AlbumServices {
         try {
             const response = await fetch(`${API_URL}/album`);
             const data = await response.json();
-            return data.filter(album => album.destacado);
+            return data.filter(album => album.esDestacado);
         } catch (error) {
             throw error;
         }
