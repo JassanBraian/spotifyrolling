@@ -42,7 +42,8 @@ Subir ultimos cambios locales:
 07. git push (en rama dev)
 08. git checkout devIntegrante
 09. git pull origin dev
-10. git push 
+10. npm install (si sabemos que algun integrante instaló alguna nueva dependencia)
+11. git push
 
 
 

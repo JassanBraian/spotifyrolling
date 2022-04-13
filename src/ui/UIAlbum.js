@@ -5,6 +5,7 @@ import Album from '../classes/Album.js';
 
 const albumServices = new AlbumServices();
 const validationServices = new ValidationServices();
+const superUI = new SuperUI();
 
 let albumDeleteId = 0;
 
@@ -15,14 +16,9 @@ class UIAlbum extends SuperUI {
 
             if (e.target.classList.contains('btnModalAlbumSave')) {
                 const objAlbum = getDataFrmAlbum();
-                let res = '';
-                !objAlbum.id ?
-                    res = await albumServices.createAlbum(objAlbum)
-                    :
-                    res = await albumServices.updateAlbum(objAlbum);
 
-                res ? console.log('Ha sido creado/editado correctamente')
-                    : console.log('Ocurrio error en create o update album');
+                !objAlbum.id ? await albumServices.createAlbum(objAlbum)
+                    : await albumServices.updateAlbum(objAlbum);
 
             } else if (e.target.classList.contains('btnCreateAlbum')) {
                 document.querySelector('#frmAlbum').reset();
@@ -40,24 +36,29 @@ class UIAlbum extends SuperUI {
             } else if (e.target.classList.contains('btnChangeDestacAlbum')) {
                 const album = await albumServices.getAlbumById(e.target.id);
                 await albumServices.changeDestacadoAlbum(album, !album.esDestacado);
+
             }
         });
 
         document.querySelector('#albumNombre').addEventListener('blur', function (e) {
-            validationServices.validarString(e.target) ?
-                validarFrmAlbumCompleto() : console.log("Mostrar msj error con js");
+            validateAlbumNombre(e);
+        }, true);
+        document.querySelector('#albumNombre').addEventListener('input', function (e) {
+            validateAlbumNombre(e);
         }, true);
 
         document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
-            validationServices.validarString(e.target) ?
-                true : console.log("Mostrar msj error con js");
-            validarFrmAlbumCompleto();
+            validateAlbumDescrip(e);
+        }, true);
+        document.querySelector('#albumDescrip').addEventListener('input', function (e) {
+            validateAlbumDescrip(e);
         }, true);
 
         document.querySelector('#albumImgUrl').addEventListener('blur', function (e) {
-            validationServices.validarImgUrl(e.target) ?
-                true : console.log("Mostrar msj error con js");
-            validarFrmAlbumCompleto();
+            validateAlbumImgUrl(e);
+        }, true);
+        document.querySelector('#albumImgUrl').addEventListener('input', function (e) {
+            validateAlbumImgUrl(e);
         }, true);
 
     }
@@ -121,18 +122,24 @@ class UIAlbum extends SuperUI {
                                 <div class="mb-3">
                                     <input type="text" class="form-control" id="albumId" style="display: none">
                                 </div>
+
                                 <div class="mb-3">
-                                    <label for="albumNombre1" class="form-label">Nombre</label>
+                                    <label for="albumNombre" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" id="albumNombre">
                                     <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
+
+
+
                                 <div class="mb-3">
                                     <label for="albumDescrip" class="form-label">Descripcion</label>
                                     <input type="text" class="form-control" id="albumDescrip">
+                                    <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="albumImgUrl" class="form-label">Portada</label>
                                     <input type="url" class="form-control" id="albumImgUrl">
+                                    <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="albumDestacado" class="form-label">Destacado</label>
@@ -146,7 +153,7 @@ class UIAlbum extends SuperUI {
                                     <select name="selectCategoria" class="form-select" id="albumCategoria">
                                         <option value='pop'>Pop</option>
                                         <option value='rock'>Rock</option>
-                                        <option value='destacado'>Destacado</option>
+                                        <option value='latino'>Latino</option>
                                     </select>
                                 </div>
                             </form>
@@ -214,6 +221,34 @@ function validarFrmAlbumCompleto() {
         btnSave.disabled = true;
         return false;
     }
+}
+
+function validateAlbumNombre(e) {
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarString(e.target)) {
+        superUI.showHideElement(errorElem, false);
+        superUI.addRemoveStyleInputValidat(e.target, true);
+        validarFrmAlbumCompleto();
+    } else {
+        superUI.showHideElement(errorElem, true);
+        superUI.addRemoveStyleInputValidat(e.target, false);
+    }
+}
+
+function validateAlbumDescrip(e) {
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarString(e.target)) {
+        superUI.showHideElement(errorElem, false);
+        validarFrmAlbumCompleto();
+    } else superUI.showHideElement(errorElem, true);
+}
+
+function validateAlbumImgUrl(e) {
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarImgUrl(e.target)) {
+        superUI.showHideElement(errorElem, false);
+        validarFrmAlbumCompleto();
+    } else superUI.showHideElement(errorElem, true);
 }
 
 export default UIAlbum;
