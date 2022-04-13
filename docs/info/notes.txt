@@ -42,3 +42,9 @@ Subir ultimos cambios locales:
 7. git push (en rama dev)
 8. git checkout devIntegrante
 
+
+
+Instalacion de json server - correccion de errores
+1- npm install -g json-server 
+2-Set-ExecutionPolicy Unrestricted
+3-json-server --watch db.json --port 4000
