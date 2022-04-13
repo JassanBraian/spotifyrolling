@@ -2,7 +2,6 @@ import SuperUI from './SuperUI.js';
 import AlbumServices from '../utils/AlbumServices.js';
 import ValidationServices from '../utils/ValidationServices.js';
 import Album from '../classes/Album.js';
-import Swal from '../../node_modules/sweetalert2/src/sweetalert2.js';
 
 const albumServices = new AlbumServices();
 const validationServices = new ValidationServices();
@@ -17,28 +16,9 @@ class UIAlbum extends SuperUI {
 
             if (e.target.classList.contains('btnModalAlbumSave')) {
                 const objAlbum = getDataFrmAlbum();
-                let res = '';
-                !objAlbum.id ?
-                    res = await albumServices.createAlbum(objAlbum)
-                    :
-                    res = await albumServices.updateAlbum(objAlbum);
 
-                res ?
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Aviso',
-                        text: 'La operación fue realizada con éxito',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    :
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Ocurrió un error al realizar la operación!',
-                        footer: '<a href="">Why do I have this issue?</a>'
-                    });
+                !objAlbum.id ? await albumServices.createAlbum(objAlbum)
+                    : await albumServices.updateAlbum(objAlbum);
 
             } else if (e.target.classList.contains('btnCreateAlbum')) {
                 document.querySelector('#frmAlbum').reset();
@@ -61,32 +41,24 @@ class UIAlbum extends SuperUI {
         });
 
         document.querySelector('#albumNombre').addEventListener('blur', function (e) {
-            const errorElem = e.target.parentElement.querySelector('.form-text');
-            console.log(e.target)
-            if (validationServices.validarString(e.target)) {
-                superUI.showHideElement(errorElem, false);
-                superUI.addRemoveStyleInputValidat(e.target, true);
-                validarFrmAlbumCompleto();
-            } else {
-                superUI.showHideElement(errorElem, true);
-                superUI.addRemoveStyleInputValidat(e.target, false);
-            }
+            validateAlbumNombre(e);
+        }, true);
+        document.querySelector('#albumNombre').addEventListener('input', function (e) {
+            validateAlbumNombre(e);
         }, true);
 
+        document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
+            validateAlbumDescrip(e);
+        }, true);
         document.querySelector('#albumDescrip').addEventListener('input', function (e) {
-            const errorElem = e.target.parentElement.querySelector('.form-text');
-            if (validationServices.validarString(e.target)) {
-                superUI.showHideElement(errorElem, false);
-                validarFrmAlbumCompleto();
-            } else superUI.showHideElement(errorElem, true);
+            validateAlbumDescrip(e);
         }, true);
 
+        document.querySelector('#albumImgUrl').addEventListener('blur', function (e) {
+            validateAlbumImgUrl(e);
+        }, true);
         document.querySelector('#albumImgUrl').addEventListener('input', function (e) {
-            const errorElem = e.target.parentElement.querySelector('.form-text');
-            if (validationServices.validarImgUrl(e.target)) {
-                superUI.showHideElement(errorElem, false);
-                validarFrmAlbumCompleto();
-            } else superUI.showHideElement(errorElem, true);
+            validateAlbumImgUrl(e);
         }, true);
 
     }
@@ -249,6 +221,34 @@ function validarFrmAlbumCompleto() {
         btnSave.disabled = true;
         return false;
     }
+}
+
+function validateAlbumNombre(e) {
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarString(e.target)) {
+        superUI.showHideElement(errorElem, false);
+        superUI.addRemoveStyleInputValidat(e.target, true);
+        validarFrmAlbumCompleto();
+    } else {
+        superUI.showHideElement(errorElem, true);
+        superUI.addRemoveStyleInputValidat(e.target, false);
+    }
+}
+
+function validateAlbumDescrip(e) {
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarString(e.target)) {
+        superUI.showHideElement(errorElem, false);
+        validarFrmAlbumCompleto();
+    } else superUI.showHideElement(errorElem, true);
+}
+
+function validateAlbumImgUrl(e) {
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarImgUrl(e.target)) {
+        superUI.showHideElement(errorElem, false);
+        validarFrmAlbumCompleto();
+    } else superUI.showHideElement(errorElem, true);
 }
 
 export default UIAlbum;
