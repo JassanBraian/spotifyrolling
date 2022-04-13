@@ -44,3 +44,9 @@ Subir ultimos cambios locales:
 09. git pull origin dev
 10. git push 
 
+
+
+Instalacion de json server - correccion de errores
+1- npm install -g json-server 
+2-Set-ExecutionPolicy Unrestricted
+3-json-server --watch db.json --port 4000
