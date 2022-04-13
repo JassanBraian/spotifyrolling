@@ -25,7 +25,7 @@ class UserServices {
         try {
             const response = await fetch(`${API_URL}/usuario`);
             const data = await response.json();
-            return data.filter(user => user.nombreUsuario === userName)[0];
+            return data.filter(user => user.usuario === userName)[0];
         } catch (error) {
             throw error;
         }
@@ -38,12 +38,14 @@ class UserServices {
             if (userLogged && userLogged.nombreUsuario) {
                 const response = await fetch(`${API_URL}/usuario`);
                 const data = await response.json();
-                const userDB = await data.filter(user => user.nombreUsuario === userLogged.nombreUsuario)[0];
+                const userDB = await data.filter(user => user.usuario === userLogged.nombreUsuario)[0];
+                console.log(userDB)
                 if (!(await userDB) || await userDB.rol !== 'admin') {
                     isAdmin = false;
                 } else isAdmin = true;
             } else isAdmin = false;
 
+            console.log(isAdmin);
             return isAdmin;
 
         } catch (error) {
