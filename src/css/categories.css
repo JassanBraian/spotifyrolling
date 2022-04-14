@@ -1,13 +1,40 @@
-.carousel {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    height: 200px;
+body{
+    margin: 0;
+    background-color: black;
 }
-#imagen {
+.carrousel{
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    /*align items??*/
+}
+.carrousel-items{
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 30px;
+    
+}
+.carrousel-item{
+    height: 200px;
+    min-width: 300px;
+    max-width: 300px;
+}
+.carrousel-item img{
     width: 100%;
-    height: 200px; 
-    background-size: contain;
+    height: 100%;
     object-fit: cover;
+}
+.carrousel-item:hover{
+    transform: scale(1.2);
+}
+.carrousel-item p{
+    background-color: #f0d2da;
+    text-align: center;
+    font-family: oxanium;
+    font-size: 1rem;
+    color: black;
+    margin: 0 2px;
+    padding: 10px;
     
 }
