@@ -50,7 +50,9 @@ class AlbumServices {
                 },
                 body: JSON.stringify({
                     nombre: newAlbum.nombre,
+                    artista: newAlbum.artista,
                     descrip: newAlbum.descrip,
+                    audio: newAlbum.audio,
                     imgUrl: newAlbum.imgUrl,
                     esDestacado: newAlbum.esDestacado === 'true',
                     categoria: newAlbum.categoria
@@ -70,7 +72,9 @@ class AlbumServices {
                 },
                 body: JSON.stringify({
                     nombre: updateAlbum.nombre,
-                    descrip: updateAlbum.descrip,
+                    artista: updateAlbum.artista,
+                    descrip: updateAlbum.descrip,                    
+                    audio: updateAlbum.audio,
                     imgUrl: updateAlbum.imgUrl,
                     esDestacado: updateAlbum.esDestacado === 'true',
                     categoria: updateAlbum.categoria
@@ -100,8 +104,10 @@ class AlbumServices {
                 },
                 body: JSON.stringify({
                     nombre: updateAlbum.nombre,
+                    artista: updateAlbum.artista,
                     descrip: updateAlbum.descrip,
                     imgUrl: updateAlbum.imgUrl,
+                    audio: updateAlbum.audio,
                     esDestacado: destacado,
                     categoria: updateAlbum.categoria
                 })

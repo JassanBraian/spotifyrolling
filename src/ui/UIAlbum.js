@@ -35,7 +35,7 @@ class UIAlbum extends SuperUI {
                 albumDeleteId = e.target.id;
 
             } else if (e.target.classList.contains('btnModalConfirmDelete')) {
-                albumServices.deleteAlbum(albumDeleteId);
+                await albumServices.deleteAlbum(albumDeleteId);
 
             } else if (e.target.classList.contains('btnChangeDestacAlbum')) {
                 const album = await albumServices.getAlbumById(e.target.id);
@@ -49,6 +49,13 @@ class UIAlbum extends SuperUI {
         }, true);
         document.querySelector('#albumNombre').addEventListener('input', function (e) {
             validateAlbumNombre(e);
+        }, true);
+
+        document.querySelector('#albumArtista').addEventListener('blur', function (e) {
+            validateAlbumArtista(e);
+        }, true);
+        document.querySelector('#albumArtista').addEventListener('input', function (e) {
+            validateAlbumArtista(e);
         }, true);
 
         document.querySelector('#albumDescrip').addEventListener('blur', function (e) {
@@ -65,6 +72,13 @@ class UIAlbum extends SuperUI {
             validateAlbumImgUrl(e);
         }, true);
 
+        document.querySelector('#albumAudio').addEventListener('blur', function (e) {
+            validateAlbumAudio(e);
+        }, true);
+        document.querySelector('#albumAudio').addEventListener('input', function (e) {
+            validateAlbumAudio(e);
+        }, true);
+
     }
 
     buildAlbumTable = async () => {
@@ -74,21 +88,21 @@ class UIAlbum extends SuperUI {
                 <h3 style="color: white;">Listado de Albumes</h3>
                 <button 
                     class="btnCreateAlbum btn" 
-                    role="button" 
                     data-bs-toggle="modal" 
                     data-bs-target="#albumModalCrud" 
                     style="color: green"
-                >
-                    <i class="fa-solid fa-circle-plus fa-3x"></i>
-                </button>
+                > <i class="fa-solid fa-circle-plus fa-3x"></i>
+                </button>    
             </div>
 
             <table class="table table-dark table-hover " id="tableAlbumList">
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Artista</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Portada</th>
+                        <th scope="col">Audio</th>
                         <th scope="col">Destacado</th>
                         <th scope="col">Categoria</th>
                         <th scope="col" class="text-center">Operaciones</th>
@@ -111,8 +125,10 @@ class UIAlbum extends SuperUI {
 
             tr.innerHTML = `
                 <td>${album.nombre}</td>
+                <td>${album.artista}</td>
                 <td>${album.descrip}</td>
                 <td>${album.imgUrl}</td>
+                <td>${album.audio}</td>
                 <td>${album.esDestacado ? 'Si' : 'No'}</td>
                 <td>${album.categoria}</td>
                 <td class="d-flex justify-content-evenly">
@@ -170,7 +186,11 @@ class UIAlbum extends SuperUI {
                                 </div>
 
 
-
+                                <div class="mb-3">
+                                    <label for="albumArtista" class="form-label">Artista</label>
+                                    <input type="text" class="form-control" id="albumArtista">
+                                    <div class="form-text" style="display: none">Campo obligatorio</div>
+                                </div>
                                 <div class="mb-3">
                                     <label for="albumDescrip" class="form-label">Descripcion</label>
                                     <input type="text" class="form-control" id="albumDescrip">
@@ -179,6 +199,11 @@ class UIAlbum extends SuperUI {
                                 <div class="mb-3">
                                     <label for="albumImgUrl" class="form-label">Portada</label>
                                     <input type="url" class="form-control" id="albumImgUrl">
+                                    <div class="form-text" style="display: none">Campo obligatorio</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="albumAudio" class="form-label">Audio</label>
+                                    <input type="text" class="form-control" id="albumAudio">
                                     <div class="form-text" style="display: none">Campo obligatorio</div>
                                 </div>
                                 <div class="mb-3">
@@ -193,6 +218,7 @@ class UIAlbum extends SuperUI {
                                     <select name="selectCategoria" class="form-select" id="albumCategoria">
                                         <option value='pop'>Pop</option>
                                         <option value='rock'>Rock</option>
+                                        <option value='electronica'>Electrónica</option>
                                         <option value='latino'>Latino</option>
                                     </select>
                                 </div>
@@ -229,8 +255,10 @@ function getDataFrmAlbum() {
     const objAlbum = new Album(
         !albumId ? 0 : albumId,
         frmAlbum.querySelector('#albumNombre').value,
+        frmAlbum.querySelector('#albumArtista').value,
         frmAlbum.querySelector('#albumDescrip').value,
         frmAlbum.querySelector('#albumImgUrl').value,
+        frmAlbum.querySelector('#albumAudio').value,
         frmAlbum.querySelector('#albumDestacado').value,
         frmAlbum.querySelector('#albumCategoria').value
     );
@@ -242,8 +270,10 @@ function setDataFrmAlbum(objAlbum) {
 
     frmAlbum.querySelector('#albumId').value = objAlbum.id;
     frmAlbum.querySelector('#albumNombre').value = objAlbum.nombre;
+    frmAlbum.querySelector('#albumArtista').value = objAlbum.artista;
     frmAlbum.querySelector('#albumDescrip').value = objAlbum.descrip;
     frmAlbum.querySelector('#albumImgUrl').value = objAlbum.imgUrl;
+    frmAlbum.querySelector('#albumAudio').value = objAlbum.audio;
     frmAlbum.querySelector('#albumDestacado').value = objAlbum.esDestacado;
     frmAlbum.querySelector('#albumCategoria').value = objAlbum.categoria;
 }
@@ -251,8 +281,10 @@ function setDataFrmAlbum(objAlbum) {
 function validarFrmAlbumCompleto() {
     const btnSave = document.querySelector('#btnModalAlbumSave');
     if (validationServices.validarString(frmAlbum.querySelector('#albumNombre'))
+        && validationServices.validarString(frmAlbum.querySelector('#albumArtista'))
         && validationServices.validarString(frmAlbum.querySelector('#albumDescrip'))
         && validationServices.validarImgUrl(frmAlbum.querySelector('#albumImgUrl'))
+        && validationServices.validarString(frmAlbum.querySelector('#albumAudio'))
         && validationServices.validarSelectBoolean(frmAlbum.querySelector('#albumDestacado'))
         && validationServices.validarNoEmpty(frmAlbum.querySelector('#albumCategoria'))) {
         superUI.setDisabledBtn(btnSave, false);
@@ -264,6 +296,20 @@ function validarFrmAlbumCompleto() {
 }
 
 function validateAlbumNombre(e) {
+    const btnSave = document.querySelector('#btnModalAlbumSave');
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarString(e.target)) {
+        superUI.setDisplayElement(errorElem, false);
+        superUI.setStyleInputValidat(e.target, true);
+        validarFrmAlbumCompleto();
+    } else {
+        superUI.setDisplayElement(errorElem, true);
+        superUI.setStyleInputValidat(e.target, false);
+        superUI.setDisabledBtn(btnSave, true);
+    }
+}
+
+function validateAlbumArtista(e) {
     const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarString(e.target)) {
@@ -295,6 +341,20 @@ function validateAlbumImgUrl(e) {
     const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarImgUrl(e.target)) {
+        superUI.setDisplayElement(errorElem, false);
+        superUI.setStyleInputValidat(e.target, true);
+        validarFrmAlbumCompleto();
+    } else {
+        superUI.setDisplayElement(errorElem, true);
+        superUI.setStyleInputValidat(e.target, false);
+        superUI.setDisabledBtn(btnSave, true);
+    }
+}
+
+function validateAlbumAudio(e) {
+    const btnSave = document.querySelector('#btnModalAlbumSave');
+    const errorElem = e.target.parentElement.querySelector('.form-text');
+    if (validationServices.validarString(e.target)) {
         superUI.setDisplayElement(errorElem, false);
         superUI.setStyleInputValidat(e.target, true);
         validarFrmAlbumCompleto();

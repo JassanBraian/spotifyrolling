@@ -28,16 +28,20 @@
   "album": [
     {
       "nombre": "Off the Wall",
+      "artista": "asd",
       "descrip": "descripcion1",
       "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
-      "esDestacado": false,
+      "audio": "asd2",
+      "esDestacado": true,
       "categoria": "pop",
       "id": 1
     },
     {
       "nombre": "Thriller",
+      "artista": "asd",
       "descrip": "descripcion2",
       "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
+      "audio": "asd2",
       "esDestacado": false,
       "categoria": "pop",
       "id": 2
