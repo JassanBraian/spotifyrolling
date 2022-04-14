@@ -72,13 +72,18 @@ class UIAlbum extends SuperUI {
         table.innerHTML = `
             <div class="d-flex justify-content-between p-2" style="background-color: #212529 ">
                 <h3 style="color: white;">Listado de Albumes</h3>
-                <button type="button" class="btnCreateAlbum btn btn-success" data-bs-toggle="modal"
-                    data-bs-target="#albumModalCrud">
-                Cargar Album
+                <button 
+                    class="btnCreateAlbum btn" 
+                    role="button" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#albumModalCrud" 
+                    style="color: green"
+                >
+                    <i class="fa-solid fa-circle-plus fa-3x"></i>
                 </button>
             </div>
 
-            <table class="table table-dark table-hover" id="tableAlbumList">
+            <table class="table table-dark table-hover " id="tableAlbumList">
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
@@ -110,12 +115,12 @@ class UIAlbum extends SuperUI {
                 <td>${album.imgUrl}</td>
                 <td>${album.esDestacado ? 'Si' : 'No'}</td>
                 <td>${album.categoria}</td>
-                <td class="text-center">
+                <td class="d-flex justify-content-evenly">
                     <button 
                         type="button" 
                         class="btnChangeDestacAlbum btn btn-primary"
                         id=${album.id} 
-                    >${album.esDestacado ? 'Qui Dest' : 'Destacar'}
+                    > <i class="fa-solid fa-star"></i>
                     </button>
                     <button 
                         type="button" 
@@ -123,7 +128,7 @@ class UIAlbum extends SuperUI {
                         id=${album.id} 
                         data-bs-toggle="modal" 
                         data-bs-target="#albumModalCrud"
-                    >Editar
+                    > <i class="fa-solid fa-pen"></i>
                     </button>
                     <button 
                         type="button" 
@@ -131,7 +136,7 @@ class UIAlbum extends SuperUI {
                         id=${album.id} 
                         data-bs-toggle="modal" 
                         data-bs-target="#modalConfirmDelete"
-                        >Eliminar
+                        > <i class="fa-solid fa-trash"></i>
                     </button>
                 </td>
             `;
