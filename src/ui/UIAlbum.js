@@ -23,13 +23,13 @@ class UIAlbum extends SuperUI {
             } else if (e.target.classList.contains('btnCreateAlbum')) {
                 document.querySelector('#frmAlbum').reset();
                 const btnSave = document.querySelector('#btnModalAlbumSave');
-                superUI.setDisableBtn(btnSave, true);
+                superUI.setDisabledBtn(btnSave, true);
 
             } else if (e.target.classList.contains('btnEditAlbum')) {
                 const objAlbum = await albumServices.getAlbumById(e.target.id);
                 setDataFrmAlbum(await objAlbum);
                 const btnSave = document.querySelector('#btnModalAlbumSave');
-                superUI.setDisableBtn(btnSave, false);
+                superUI.setDisabledBtn(btnSave, false);
 
             } else if (e.target.classList.contains('btnDeleteAlbum')) {
                 albumDeleteId = e.target.id;
@@ -250,10 +250,10 @@ function validarFrmAlbumCompleto() {
         && validationServices.validarImgUrl(frmAlbum.querySelector('#albumImgUrl'))
         && validationServices.validarSelectBoolean(frmAlbum.querySelector('#albumDestacado'))
         && validationServices.validarNoEmpty(frmAlbum.querySelector('#albumCategoria'))) {
-        superUI.setDisableBtn(btnSave, false);
+        superUI.setDisabledBtn(btnSave, false);
         return true;
     } else {
-        superUI.setDisableBtn(btnSave, true);
+        superUI.setDisabledBtn(btnSave, true);
         return false;
     }
 }
@@ -262,13 +262,13 @@ function validateAlbumNombre(e) {
     const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarString(e.target)) {
-        superUI.showHideElement(errorElem, false);
-        superUI.addRemoveStyleInputValidat(e.target, true);
+        superUI.setDisplayElement(errorElem, false);
+        superUI.setStyleInputValidat(e.target, true);
         validarFrmAlbumCompleto();
     } else {
-        superUI.showHideElement(errorElem, true);
-        superUI.addRemoveStyleInputValidat(e.target, false);
-        superUI.setDisableBtn(btnSave, true);
+        superUI.setDisplayElement(errorElem, true);
+        superUI.setStyleInputValidat(e.target, false);
+        superUI.setDisabledBtn(btnSave, true);
     }
 }
 
@@ -276,13 +276,13 @@ function validateAlbumDescrip(e) {
     const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarString(e.target)) {
-        superUI.showHideElement(errorElem, false);
-        superUI.addRemoveStyleInputValidat(e.target, true);
+        superUI.setDisplayElement(errorElem, false);
+        superUI.setStyleInputValidat(e.target, true);
         validarFrmAlbumCompleto();
     } else {
-        superUI.showHideElement(errorElem, true);
-        superUI.addRemoveStyleInputValidat(e.target, false);
-        superUI.setDisableBtn(btnSave, true);
+        superUI.setDisplayElement(errorElem, true);
+        superUI.setStyleInputValidat(e.target, false);
+        superUI.setDisabledBtn(btnSave, true);
     }
 }
 
@@ -290,13 +290,13 @@ function validateAlbumImgUrl(e) {
     const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarImgUrl(e.target)) {
-        superUI.showHideElement(errorElem, false);
-        superUI.addRemoveStyleInputValidat(e.target, true);
+        superUI.setDisplayElement(errorElem, false);
+        superUI.setStyleInputValidat(e.target, true);
         validarFrmAlbumCompleto();
     } else {
-        superUI.showHideElement(errorElem, true);
-        superUI.addRemoveStyleInputValidat(e.target, false);
-        superUI.setDisableBtn(btnSave, true);
+        superUI.setDisplayElement(errorElem, true);
+        superUI.setStyleInputValidat(e.target, false);
+        superUI.setDisabledBtn(btnSave, true);
     }
 }
 

@@ -1,9 +1,9 @@
 class SuperUI {
-    showHideElement(element, show) {
+    setDisplayElement(element, show) {
         show ? element.style = '' : element.style = 'display: none';
     }
 
-    addRemoveStyleInputValidat(element, state) {
+    setStyleInputValidat(element, state) {
         if (state) {
             element.classList.remove('input-incorrecto');
             element.classList.add('input-correcto');
@@ -17,7 +17,7 @@ class SuperUI {
         }
     }
 
-    setDisableBtn = (btn, state) => btn.disabled = state;
+    setDisabledBtn = (btn, state) => btn.disabled = state;
 
     buildModalConfirm = async (modalConfirmId, title, msj, btnConfirmName) => {
         const div = document.createElement('div');
