@@ -39,13 +39,11 @@ class UserServices {
                 const response = await fetch(`${API_URL}/usuario`);
                 const data = await response.json();
                 const userDB = await data.filter(user => user.usuario === userLogged.nombreUsuario)[0];
-                console.log(userDB)
                 if (!(await userDB) || await userDB.rol !== 'admin') {
                     isAdmin = false;
                 } else isAdmin = true;
             } else isAdmin = false;
 
-            console.log(isAdmin);
             return isAdmin;
 
         } catch (error) {

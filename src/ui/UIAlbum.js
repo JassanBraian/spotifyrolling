@@ -22,10 +22,14 @@ class UIAlbum extends SuperUI {
 
             } else if (e.target.classList.contains('btnCreateAlbum')) {
                 document.querySelector('#frmAlbum').reset();
+                const btnSave = document.querySelector('#btnModalAlbumSave');
+                superUI.setDisableBtn(btnSave, true);
 
             } else if (e.target.classList.contains('btnEditAlbum')) {
                 const objAlbum = await albumServices.getAlbumById(e.target.id);
                 setDataFrmAlbum(await objAlbum);
+                const btnSave = document.querySelector('#btnModalAlbumSave');
+                superUI.setDisableBtn(btnSave, false);
 
             } else if (e.target.classList.contains('btnDeleteAlbum')) {
                 albumDeleteId = e.target.id;
@@ -63,7 +67,37 @@ class UIAlbum extends SuperUI {
 
     }
 
-    buildAlbumList = async () => {
+    buildAlbumTable = async () => {
+        const table = document.createElement('div');
+        table.innerHTML = `
+            <div class="d-flex justify-content-between p-2" style="background-color: #212529 ">
+                <h3 style="color: white;">Listado de Albumes</h3>
+                <button type="button" class="btnCreateAlbum btn btn-success" data-bs-toggle="modal"
+                    data-bs-target="#albumModalCrud">
+                Cargar Album
+                </button>
+            </div>
+
+            <table class="table table-dark table-hover" id="tableAlbumList">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Portada</th>
+                        <th scope="col">Destacado</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col" class="text-center">Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        `;
+        return table;
+    }
+
+    buildAlbumTBody = async () => {
         const albumesDB = await albumServices.getAlbumes();
         const albumItems = [];
 
@@ -104,6 +138,7 @@ class UIAlbum extends SuperUI {
 
             albumItems.push(tr);
         });
+
         return albumItems;
     }
 
@@ -215,15 +250,16 @@ function validarFrmAlbumCompleto() {
         && validationServices.validarImgUrl(frmAlbum.querySelector('#albumImgUrl'))
         && validationServices.validarSelectBoolean(frmAlbum.querySelector('#albumDestacado'))
         && validationServices.validarNoEmpty(frmAlbum.querySelector('#albumCategoria'))) {
-        btnSave.disabled = false;
+        superUI.setDisableBtn(btnSave, false);
         return true;
     } else {
-        btnSave.disabled = true;
+        superUI.setDisableBtn(btnSave, true);
         return false;
     }
 }
 
 function validateAlbumNombre(e) {
+    const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarString(e.target)) {
         superUI.showHideElement(errorElem, false);
@@ -232,23 +268,36 @@ function validateAlbumNombre(e) {
     } else {
         superUI.showHideElement(errorElem, true);
         superUI.addRemoveStyleInputValidat(e.target, false);
+        superUI.setDisableBtn(btnSave, true);
     }
 }
 
 function validateAlbumDescrip(e) {
+    const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarString(e.target)) {
         superUI.showHideElement(errorElem, false);
+        superUI.addRemoveStyleInputValidat(e.target, true);
         validarFrmAlbumCompleto();
-    } else superUI.showHideElement(errorElem, true);
+    } else {
+        superUI.showHideElement(errorElem, true);
+        superUI.addRemoveStyleInputValidat(e.target, false);
+        superUI.setDisableBtn(btnSave, true);
+    }
 }
 
 function validateAlbumImgUrl(e) {
+    const btnSave = document.querySelector('#btnModalAlbumSave');
     const errorElem = e.target.parentElement.querySelector('.form-text');
     if (validationServices.validarImgUrl(e.target)) {
         superUI.showHideElement(errorElem, false);
+        superUI.addRemoveStyleInputValidat(e.target, true);
         validarFrmAlbumCompleto();
-    } else superUI.showHideElement(errorElem, true);
+    } else {
+        superUI.showHideElement(errorElem, true);
+        superUI.addRemoveStyleInputValidat(e.target, false);
+        superUI.setDisableBtn(btnSave, true);
+    }
 }
 
 export default UIAlbum;
