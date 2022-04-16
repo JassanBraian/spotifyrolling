@@ -85,7 +85,7 @@ function validarEntradas(e) {
 }
 const getUsuario = async () => {
   try {
-    const response = await fetch(`${API_URL}/usuarios`);
+    const response = await fetch(`${API_URL}/usuario`);
     const usuarios = await response.json(); //aca ya tengo a todos los usuarios en forma de objeto
     validarUsuario(usuarios);
   } catch (error) {

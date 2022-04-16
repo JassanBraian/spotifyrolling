@@ -131,7 +131,7 @@ function sendData(e){
 
 const createUser=async()=>{
   try{
-    await fetch(`${API_URL}/usuarios`,{
+    await fetch(`${API_URL}/usuario`,{
       method:"POST",
       headers:{
         "Content-type":"application/json",

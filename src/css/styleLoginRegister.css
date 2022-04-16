@@ -5,12 +5,17 @@
   text-decoration: none;
   font-family: "Roboto", sans-serif;
 }
-body {
+/* body {
   background-image: url(../../docs/img/login1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+} */
+
+body{
+  background-color: #212529;
+  
 }
 
 main {
@@ -33,7 +38,8 @@ main {
   display: flex;
   justify-content: center;
   backdrop-filter: blur(7px);
-  background-color: #00ff6a4d;
+  background-color: #FFC0CB;
+  border-radius: 1rem;
 }
 
 .back_box div {
@@ -44,11 +50,13 @@ main {
 .back_box div p,
 .back_box div button {
   margin-top: 30px;
+  color: black;
 }
 
 .back_box div h3 {
   font-weight: 400;
   font-size: 1.5rem;
+  color: black;
 }
 .back_box button {
   padding: 1rem 3rem;
@@ -59,10 +67,10 @@ main {
   cursor: pointer;
   color: white;
   transition: all 300ms;
+  border-radius: 1rem;
 }
 .back_box button:hover {
-  background: white;
-  color: #128f06bd;
+  background: #88D8C0;
 }
 
 /* Form */
@@ -87,7 +95,7 @@ main {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  color: #128f06bd;
+  color: #88D8C0;
 }
 .container_login_register form input {
   width: 100%;
@@ -104,9 +112,10 @@ main {
   margin-top: 20px;
   border: none;
   font-size: 1.1rem;
-  background-color: #128f06bd;
-  color: white;
+  background-color: #88D8C0;
+  color: black;
   cursor: pointer;
+  border-radius: 0.5rem;
 }
 
 .form_login {
@@ -125,6 +134,7 @@ main {
 }
 .form_input_error_active,.activeMsj{ /*para habilitar el error*/
   display:block;
+  padding-top: 20px;
 }
 .border_input_none{
 border:none;
