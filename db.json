@@ -1,45 +1,20 @@
 {
   "usuario": [
     {
-<<<<<<< HEAD
-      "nombre": "Emanuel Rojas",
-      "usuario": "emanuelRojas",
-      "correo": "emanuelRojas@gmail.com",
-      "password": "12345678",
-=======
       "nombreUsuario": "emanuelRojas",
       "password": "1234",
->>>>>>> b43af2f58f1e45691684efc0ff6d6f7788a14b04
       "rol": "admin",
       "id": 1
     },
     {
-<<<<<<< HEAD
-      "nombre": "Lucas Suarez",
-      "usuario": "lucasSuarez",
-      "correo": "lucasSuarez@gmail.com",
-      "password": "12345678",
-      "rol": "client",
-      "id": 2
-    },
-    {
-      "nombre": "Fernando Alexis",
-      "usuario": "killians",
-      "correo": "vale.alexis18@gmail.com",
-      "password": "12345678",
-      "rol": "client",
-      "id": 3
-=======
       "nombreUsuario": "lucasSuarez",
       "password": "1234",
       "rol": "client",
       "id": 2
->>>>>>> b43af2f58f1e45691684efc0ff6d6f7788a14b04
     }
   ],
   "album": [
     {
-<<<<<<< HEAD
       "nombre": "Off the Wall",
       "artista": "asd",
       "descrip": "descripcion1",
@@ -58,7 +33,8 @@
       "esDestacado": false,
       "categoria": "pop",
       "id": 2
-=======
+    },
+    {
       "nombre": "another brick in the wall",
       "artista": "Pink Floyd",
       "descrip": "Bob Ezrin comenzó a escribir un resumen para el álbum que se unió rápidamente una vez que comenzó a pensar en él como un guión. Presentó la banda su “guión”, que incluía lugares donde las canciones actuales y las canciones “por escribir” encajarían más adelante. Aunque se debaten las razones y el momento exactos, el teclista de Pink Floyd, Wright, fue despedido de la banda durante la grabación de The Wall .",
@@ -70,7 +46,7 @@
     },
     {
       "nombre": "Rock And Roll",
-      "artista": "Led Zeppeling",
+      "artista": "Led Zeppelin",
       "descrip": " canción de Led Zeppelin incluida en su álbum Led Zeppelin IV en 1971. El tema tiene un ritmo combinado de blues y hard rock. Fue escrita originalmente por Jimmy Page (guitarra), John Bonham (batería), Robert Plant (voz) y John Paul Jones (bajo). La guitarra de Page, con un ritmo de hard rock blues fusion",
       "imgUrl": "https://m.media-amazon.com/images/I/51h-cJeHf0L._SX450_.jpg",
       "audio": "",
@@ -86,7 +62,7 @@
       "audio": "./music/black_sabath_Paranoid",
       "esDestacada": false,
       "categoria": "rock",
-      "id": 3
+      "id": 2
     },
     {
       "nombre": "Ojalá Que Llueva Café",
@@ -177,7 +153,6 @@
       "esDestacada": false,
       "categoria": "rock",
       "id": 12
->>>>>>> b43af2f58f1e45691684efc0ff6d6f7788a14b04
     }
   ],
   "comentario": [
@@ -194,8 +169,4 @@
       "id": 1
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b43af2f58f1e45691684efc0ff6d6f7788a14b04
