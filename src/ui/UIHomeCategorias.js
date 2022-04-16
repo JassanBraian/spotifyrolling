@@ -17,7 +17,7 @@ function addListeners() {
     function createCarrousel(albums, carrousel){
         albums.forEach(album =>{
             const carrouselItems = document.createElement('div');
-            carrouselItems.classList.add('carrousel-items','col-sm-4');
+            carrouselItems.classList.add('carrousel-items','col-sm-6','col-md-4','col-lg-2');
             carrouselItems.innerHTML =`
             <img src=${album.imgUrl}>
             <div class = "text">${album.nombre}-${album.artista}</div>
