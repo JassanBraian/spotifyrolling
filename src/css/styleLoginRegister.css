@@ -32,6 +32,7 @@ main {
   padding: 10px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   backdrop-filter: blur(7px);
   background-color: #00ff6a4d;
 }

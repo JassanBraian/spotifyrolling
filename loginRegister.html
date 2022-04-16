@@ -33,11 +33,11 @@
           <form class="form_login">
             <h2>Iniciar Sesión</h2>
             <div class="grupo_usuarioLogin">
-              <input type="text" placeholder="Usuario" id="usuarioLogin" class="border_input_none" onblur="verificar(this)"/>
+              <input type="text" autocomplete="username" placeholder="Usuario" id="usuarioLogin" class="border_input_none" onBlur="verificar(this)"/>
               <p class="form_input_error"> El usuario tiene que ser de 8 a 30 digitos y solo puede contener números, letras o guion bajo.</p>
             </div>
             <div class="grupo_passwordLogin">
-              <input type="password" placeholder="Contraseña" id="passwordLogin" class="border_input_none" onblur="verificar(this)"/>
+              <input type="password" autocomplete="new-password" placeholder="Contraseña" id="passwordLogin" class="border_input_none" onBlur="verificar(this)"/>
               <p class="form_input_error">La contraseña tiene que ser de 8 a 30 dígitos.</p>
             </div>
             <button type="submit" disabled="true">Iniciar</button>
@@ -54,27 +54,27 @@
             </div>
 
             <div class="grupo_usuario">
-              <input type="text" placeholder="Nombre de Usuario" name="usuario" class="border_input_none" />
+              <input type="text" autocomplete="username" placeholder="Nombre de Usuario" name="usuario" class="border_input_none" />
               <p class="form_input_error">
                 El usuario tiene que ser de 8 a 30 dígitos y solo puede contener
                 numeros, letras o guion bajo.
               </p>
             </div>
             <div class="grupo_correo">
-              <input type="email" placeholder="Correo Electrónico" name="correo" class="border_input_none"/>
+              <input type="email" autocomplete="email" placeholder="Correo Electrónico" name="correo" class="border_input_none"/>
               <p class="form_input_error">
                 El correo solo puede contener letras, numeros, puntos, guiones y
                 guion bajo.
               </p>
             </div>
             <div class="grupo_password">
-              <input type="password" placeholder="Contraseña" name="password" class="border_input_none" />
+              <input type="password" autocomplete="new-password" placeholder="Contraseña" name="password" class="border_input_none" />
               <p class="form_input_error">
                 La contraseña tiene que ser de 8 a 30 dígitos.
               </p>
             </div>
             <div class="grupo_password2">
-              <input type="password" placeholder="Repetir Contraseña" name="password2" class="border_input_none"/>
+              <input type="password" autocomplete="new-password" placeholder="Repetir Contraseña" name="password2" class="border_input_none"/>
               <p class="form_input_error">
                 Ambas contraseñas deben ser iguales.
               </p>
