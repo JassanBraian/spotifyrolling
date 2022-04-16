@@ -42,7 +42,7 @@ class Footer {
                             <ul class="used-links-list px-2">
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">Latest News</a></li>
+                                
                             </ul>
                         </div>
                     </div>

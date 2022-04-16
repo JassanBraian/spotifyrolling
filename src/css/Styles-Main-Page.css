@@ -8,10 +8,6 @@
 html,
 body {
   height: 100%;
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh; */
   overflow-x: hidden;
 }
 /* scroll behavour */
@@ -32,7 +28,9 @@ body::-webkit-scrollbar-thumb {
 /* tocando el main */
 .main-container {
   height: 100vh;
+  color: #ffc0cb;
 }
+
 .sidebar {
   float: left;
   width: 100%;
@@ -102,13 +100,27 @@ body::-webkit-scrollbar-thumb {
   text-decoration: none;
   padding-left: 1rem;
 }
+.navbar-logo {
+  font-size: 3rem !important;
+  padding-top: 10px !important;
+}
+.navbar-name {
+  font-family: bungee;
+  color: #ffc0cb;
+  font-size: 24px;
+  padding-top: 10px;
+}
+.dropdown-name {
+  font-family: Oxanium !important;
+  font-size: 18px;
+}
+.navbar-dropdownMenu {
+  font-size: 1.6rem !important;
+}
+.icon-dropdown {
+  padding-inline-start: 120px !important;
+}
 
-/* .background-main {
-  height: auto;
-  width: 100%;
-  background-size: cover;
-} */
-/* Footer edit */
 .footer-container {
   background-color: #212529;
   height: auto;
@@ -141,35 +153,22 @@ body::-webkit-scrollbar-thumb {
   margin-top: 300px;
 }
 
-h1 {
-  font-size: 7em;
-  font-family: sans-serif;
+.inner-container h1 {
+  font-size: 5em;
+  font-family: Bungee;
 }
-h2 {
-  margin-top: -17px;
-  font-family: sans-serif;
+.inner-container h2 {
+  margin-top: 17px;
+  font-family: oxanium;
   font-size: 1.7em;
   text-align: center;
   font-weight: 400;
+  padding-bottom: 10px;
 }
-
-/* Responsive web designe */
-/* @media screen and (max-width: 390px) {
-  .sidebar {
-    display: none;
-  }
-  .img-container {
-    height: 600px;
-    width: 390px;
-    overflow-x: hidden;
-  }
-  h1,
-  h2 {
-    font-size: 3em;
-    text-align: center;
-    margin-top: -20px;
-  }
-} */
+.inner-container button {
+  font-family: oxanium;
+  border: 1px solid;
+}
 @media (max-width: 600px) {
   .sidebar {
     display: none;

@@ -8,7 +8,7 @@ class OffCanvas {
         id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel"
       >
-        <div class="offcanvas-header">
+        <div class="offcanvas-header ">
           <h5
             class="offcanvas-title"
             id="offcanvasExampleLabel"
