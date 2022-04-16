@@ -1,9 +1,12 @@
-@import url(https://fonts.googleapis.com/css2?family=Material+Icons);
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Oxanium", cursive;
+}
+html {
+  font-size: 62.5%;
 }
 *::before,
 *::after {
@@ -19,22 +22,25 @@
   --darkwhite: #cecaca;
   --pinkshadow: #ffcbdd;
   --lightbshadow: rgba(0, 0, 0, 0.15);
+  --gris: #212529;
+  --pink-pastel: #ffc0cb;
 }
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
+  background: linear-gradient(90deg, var(--pink-pastel) 0%, var(--violet) 100%);
 }
-.wrapper {
-  width: 380px;
-  height: 600px;
+.wrapper,
+.information {
+  width: 320px;
+  padding: 10px 30px;
   overflow: hidden;
   position: relative;
   border-radius: 15px;
-  padding: 25px 30px;
-  background: var(--white);
+  background: var(--gris);
   box-shadow: 0px 6px 15px var(--lightbshadow);
 }
 .wrapper i {
@@ -51,19 +57,19 @@ body {
 }
 .top-bar i {
   font-size: 30px;
-  color: var(--lightblack);
+  color: var(--pink-pastel);
 }
 .top-bar span {
   font-size: 18px;
-  color: var(--lightblack);
+  color: var(--pink-pastel);
 }
 .img-area {
   height: 256px;
   width: 100%;
-  margin-top: 25px;
+  margin-top: 0px;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0px 6px 12px var(--lightbshadow);
+  box-shadow: 0px 6px 6px var(--lightblack);
 }
 .img-area img {
   height: 100%;
@@ -73,11 +79,11 @@ body {
 .song-details {
   text-align: center;
   margin: 10px 0;
-  margin: 30px 0;
-  color: var(--lightblack);
+  margin: 8px 0;
+  color: var(--pink-pastel);
 }
 .song-details .name {
-  font-size: 21px;
+  font-size: 20px;
 }
 .song-details .artist {
   opacity: 0.9;
@@ -95,7 +101,7 @@ body {
   width: 50%;
   position: relative;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
+  background: linear-gradient(90deg, var(--pink-pastel) 0%, var(--violet) 100%);
 }
 .progres-bar::before {
   content: "";
@@ -119,15 +125,15 @@ body {
 }
 .timer span {
   font-size: 13px;
-  color: var(--lightblack);
+  color: var(--pink-pastel);
 }
 .controls {
-  margin: 40px 0 5px;
+  margin: 40px 0 5px 0;
 }
 .controls i {
   font-size: 28px;
   user-select: none;
-  background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
+  background: var(--pink-pastel);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -162,6 +168,7 @@ body {
 }
 .play-pause i {
   height: 43px;
+  width: 43px;
   line-height: 43px;
   text-align: center;
   border-radius: inherit;
@@ -181,30 +188,37 @@ body {
   width: 100%;
   padding: 15px 30px;
   border-radius: 15px;
-  background: var(--white);
-  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  background: var(--gris);
+  box-shadow: 0px -5px 10px var(--pink-pastel);
   transition: all 0.14s ease-in-out;
 }
+/*we'll use this show class in Javascript*/
 .music-list.show {
   bottom: 0;
   opacity: 1;
   pointer-events: auto;
+  color: var(--pink-pastel);
 }
 .music-list .header.row {
   display: flex;
   align-items: center;
   font-size: 19px;
-  color: var(--lightblack);
+  color: var(--gris);
 }
 .header .row i {
   cursor: default;
 }
 .header .row span {
   margin-left: 5px;
+  font-size: 20px;
+}
+#header .row material-icons {
+  margin-left: 5px;
+  font-size: 20px;
 }
 .header #close {
   font-size: 22px;
-  color: var(--lightblack);
+  color: var(--gris);
 }
 .music-list ul {
   margin: 10px 0;
@@ -219,8 +233,8 @@ body {
   list-style: none;
   padding-bottom: 10px;
   margin-bottom: 5px;
-  color: var(--lightblack);
-  border-bottom: 1px solid #e5e5e5;
+  color: var(--pi);
+  border-bottom: 1px solid var(--pink-pastel);
 }
 .music-list ul li:last-child {
   border-bottom: 0px;
@@ -228,9 +242,35 @@ body {
 .music-list ul li .row span {
   font-size: 17px;
 }
-ul li .row p {
+.music-list ul li .row p {
   opacity: 0.9;
 }
 ul li .audio-duration {
   font-size: 16px;
+}
+ul li.playing {
+  pointer-events: none;
+  color: var(--violet);
+}
+.information {
+  background: var(--white);
+  opacity: 75%;
+  display: flex;
+  align-items: center;
+}
+.info {
+  font-size: 17px;
+  color: var(--gris);
+}
+@media (min-width: 1024px) {
+  p.info {
+    font-size: 21px;
+    width: 320px;
+    justify-content: center;
+  }
+}
+@media (min-width: 600px) {
+  body {
+    flex-direction: row;
+  }
 }

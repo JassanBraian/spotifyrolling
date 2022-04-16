@@ -1,18 +1,25 @@
 const wrapper = document.querySelector(".wrapper"),
-  musicIMg = wrapper.querySelector(".img-area img"),
-  musicName = wrapper.querySelector(".song-details .name"),
-  musicArtis = wrapper.querySelector(".song-details .artist"),
+  //musicIMg = wrapper.querySelector(".img-area img"),
+  //musicName = wrapper.querySelector(".song-details .name"),
+  //musicArtist = wrapper.querySelector(".song-details .artist"),
   mainAudio = wrapper.querySelector("#main-audio"),
   playPauseBtn = wrapper.querySelector(".play-pause"),
-  prevBtn = wrapper.querySelector("#prev"),
-  nextBtn = wrapper.querySelector("#next"),
-  progressBar = wrapper.querySelector(".progres-bar");
+  //prevBtn = wrapper.querySelector("#prev"),
+  //nextBtn = wrapper.querySelector("#next"),
+  progressArea = wrapper.querySelector(".progres-area"),
+  progressBar = wrapper.querySelector(".progres-bar"),
+  musicList = wrapper.querySelector(".music-list"),
+  showMoreBtn = wrapper.querySelector("#more-music"),
+  hideMusicBtn = musicList.querySelector("#close");
 
-const API_URL = "http://localhost:4000";
+/*const panelAlbum = document.querySelector("#panel"),
+  descriptDetailHTML = wrapper.querySelector("#info");*/
+
+import { API_URL } from "../db/conexion.js";
 
 const idUrl = window.location.hash.slice(1);
 
-async function getAlbumes() {
+/*async function getAlbumes() {
   try {
     const response = await fetch(`${API_URL}/album${id}`);
     const data = await response.json();
@@ -20,15 +27,132 @@ async function getAlbumes() {
   } catch (error) {
     console.log(error);
   }
-}
-function buildAlbum(todo) {
-  const info = document.createElement("p");
-  info.textContent = todo.owner;
-  todoDetailHTML.append(info);
-}
-document.addEventListener("DOMContentLoades", () => {
-  getAlbumes(idUrl);
+}*/
+
+/*getAlbumById = async (albumId) => {
+  try {
+    const response = await fetch(`${API_URL}/album/${albumId}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  //getAlbumes(idUrl);
+  const album = getAlbumById(1);
+  buildAlbumPanel(idUrl);
 });
+
+const buildAlbumPanel = () => {
+  panelAlbum.innerHTML = `
+    <div class="wrapper">
+      <div class="top-bar">
+        <i class="material-icons">expand_more</i>
+        <span>Now Playing</span>
+        <i class="material-icons">more_horiz</i>
+      </div>
+      <div class="img-area">
+        <img
+          src="${API_URL}/${album.imgUrl}"
+          alt=""
+        />
+      </div>
+      <div class="song-details">
+        <p class="name">${API_URL}/${album.nombre}</p>
+        <p class="artist"><td>${album.artista}</td></p>
+      </div>
+      <div class="progres-area">
+        <div class="progres-bar"></div>
+        <div class="timer">
+          <span class="current">0:00</span>
+          <span class="duration"></span>
+        </div>
+        <audio
+          id="main-audio"
+          src="<td>${album.audio}</td>"
+        ></audio>
+      </div>
+      <div class="controls">
+        <i id="repeat-plist" class="material-icons" title="Playlist looped"
+          >repeat</i
+        >
+        <i id="prev" class="material-icons">skip_previous</i>
+        <div class="play-pause">
+          <i class="material-icons">play_arrow</i>
+        </div>
+        <i id="next" class="material-icons">skip_next</i>
+        <i id="more-music" class="material-icons">queue_music</i>
+      </div>
+      <div class="music-list">
+        <div class="header">
+          <div class="row">
+            <i class="material-icons">queue_music</i>
+            <span>Music list</span>
+          </div>
+        </div>
+        <i id="close" class="material-icons">close</i>
+        <ul>
+          <li>
+            <div class="row">
+              <span>lucas Suarez- amiwhere</span>
+              <p>audio library</p>
+            </div>
+            <span class="audio-duration">3:40</span>
+          </li>
+          <li>
+            <div class="row">
+              <span>Rock And Roll- Led Zeppeling</span>
+              <p>audio library</p>
+            </div>
+            <span class="audio-duration">3:40</span>
+          </li>
+          <li>
+            <div class="row">
+              <span>Paranoid- Black Sabbath</span>
+              <p>audio library</p>
+            </div>
+            <span class="audio-duration">3:40</span>
+          </li>
+          <li>
+            <div class="row">
+              <span>Ojalá Que Llueva Café- Juan Luis Guerra</span>
+              <p>audio library</p>
+            </div>
+            <span class="audio-duration">3:40</span>
+          </li>
+          <li>
+            <div class="row">
+              <span>Yo viviré-I will Survive- Celia Cruz</span>
+              <p>audio library</p>
+            </div>
+            <span class="audio-duration">3:40</span>
+          </li>
+          <li>
+            <div class="row">
+              <span>Procura- Chichi Peralta</span>
+              <p>audio library</p>
+            </div>
+            <span class="audio-duration">3:40</span>
+          </li>
+        </ul>
+      </div>
+  `;
+};
+
+function buildAlbumdescrip(album) {
+  const info = document.createElement("p");
+  info.textContent = album.descrip;
+  descriptDetailHTML.append(info);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const album = getAlbumById(1);
+  buildAlbumdescrip(idUrl);
+});*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //play music function
 function playMusic() {
@@ -44,37 +168,11 @@ function pauseMusic() {
   mainAudio.pause();
 }
 
-/*prev music function
-function prevMusic() {
-  Album--;
-  album < 1 ? (musicIndex = allMusic.length) : (musicIndex = musicIndex);
-  loadMusic(musicIndex);
-  playMusic();
-}
-
-//next music function
-function nextMusic() {
-  Album++;
-  album > allMusic.length ? (musicIndex = 1) : (musicIndex = musicIndex);
-  loadMusic(musicIndex);
-  playMusic();
-}*/
-
 //Play or music button event
 playPauseBtn.addEventListener("click", () => {
   const isMusicPaused = wrapper.classList.contains("paused");
   isMusicPaused ? pauseMusic() : playMusic();
 });
-
-/*Next music btn event
-nextBtn.addEventListener("click", () => {
-  nextMusic(); //calling next music function
-});
-
-//Prev music btn event
-prevBtn.addEventListener("click", () => {
-  prevMusic(); //calling next music function
-});*/
 
 //Update progress bar width according to music current time
 mainAudio.addEventListener("timeupdate", (e) => {
@@ -97,7 +195,6 @@ mainAudio.addEventListener("timeupdate", (e) => {
     }
     musicDuration.innerText = `${totalMin}:${totalSec}`;
   });
-
   //update playing song current time
   let currentMin = Math.floor(currentTime / 60);
   let currentSec = Math.floor(currentTime % 60);
@@ -107,18 +204,17 @@ mainAudio.addEventListener("timeupdate", (e) => {
   }
   musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
 });
-//second part
 
 // update playing song currentTime on according to the progress bar width
 progressArea.addEventListener("click", (e) => {
-  let progressWidth = progressArea.clientWidth; //getting width of progress bar
+  let progressWidthval = progressArea.clientWidth; //getting width of progress bar
   let clickedOffsetX = e.offsetX; //getting offset x value
   let songDuration = mainAudio.duration; //getting song total duration
 
-  mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+  mainAudio.currentTime = (clickedOffsetX / progressWidthval) * songDuration;
   playMusic(); //calling playMusic function
-  playingSong();
 });
+
 //change loop, shuffle, repeat icon onclick
 const repeatBtn = wrapper.querySelector("#repeat-plist");
 repeatBtn.addEventListener("click", () => {
@@ -130,7 +226,7 @@ repeatBtn.addEventListener("click", () => {
       break;
     case "repeat_one":
       repeatBtn.innerText = "shuffle";
-      repeatBtn.setAttribute("title", "Playback shuffled");
+      repeatBtn.setAttribute("title", "Playback shuffle");
       break;
     case "shuffle":
       repeatBtn.innerText = "repeat";
@@ -138,93 +234,12 @@ repeatBtn.addEventListener("click", () => {
       break;
   }
 });
-//code for what to do after song ended
-mainAudio.addEventListener("ended", () => {
-  // we'll do according to the icon means if user has set icon to
-  // loop song then we'll repeat the current song and will do accordingly
-  let getText = repeatBtn.innerText; //getting this tag innerText
-  switch (getText) {
-    case "repeat":
-      nextMusic(); //calling nextMusic function
-      break;
-    case "repeat_one":
-      mainAudio.currentTime = 0; //setting audio current time to 0
-      loadMusic(musicIndex); //calling loadMusic function with argument, in the argument there is a index of current song
-      playMusic(); //calling playMusic function
-      break;
-    case "shuffle":
-      let randIndex = Math.floor(Math.random() * allMusic.length + 1); //genereting random index/numb with max range of array length
-      do {
-        randIndex = Math.floor(Math.random() * allMusic.length + 1);
-      } while (musicIndex == randIndex); //this loop run until the next random number won't be the same of current musicIndex
-      musicIndex = randIndex; //passing randomIndex to musicIndex
-      loadMusic(musicIndex);
-      playMusic();
-      playingSong();
-      break;
-  }
-});
-//show music list onclick of music icon
-moreMusicBtn.addEventListener("click", () => {
+
+showMoreBtn.addEventListener("click", () => {
   musicList.classList.toggle("show");
 });
-closemoreMusic.addEventListener("click", () => {
-  moreMusicBtn.click();
+hideMusicBtn.addEventListener("click", () => {
+  showMoreBtn.click();
 });
+
 const ulTag = wrapper.querySelector("ul");
-// let create li tags according to array length for list
-for (let i = 0; i < allMusic.length; i++) {
-  //let's pass the song name, artist from the array
-  let liTag = `<li li-index="${i + 1}">
-                <div class="row">
-                  <span>${allMusic[i].name}</span>
-                  <p>${allMusic[i].artist}</p>
-                </div>
-                <span id="${allMusic[i].src}" class="audio-duration">3:40</span>
-                <audio class="${allMusic[i].src}" src="songs/${
-    allMusic[i].src
-  }.mp3"></audio>
-              </li>`;
-  ulTag.insertAdjacentHTML("beforeend", liTag); //inserting the li inside ul tag
-  let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
-  let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
-  liAudioTag.addEventListener("loadeddata", () => {
-    let duration = liAudioTag.duration;
-    let totalMin = Math.floor(duration / 60);
-    let totalSec = Math.floor(duration % 60);
-    if (totalSec < 10) {
-      //if sec is less than 10 then add 0 before it
-      totalSec = `0${totalSec}`;
-    }
-    liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
-    liAudioDuartionTag.setAttribute("t-duration", `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
-  });
-}
-//play particular song from the list onclick of li tag
-function playingSong() {
-  const allLiTag = ulTag.querySelectorAll("li");
-
-  for (let j = 0; j < allLiTag.length; j++) {
-    let audioTag = allLiTag[j].querySelector(".audio-duration");
-
-    if (allLiTag[j].classList.contains("playing")) {
-      allLiTag[j].classList.remove("playing");
-      let adDuration = audioTag.getAttribute("t-duration");
-      audioTag.innerText = adDuration;
-    }
-    //if the li tag index is equal to the musicIndex then add playing class in it
-    if (allLiTag[j].getAttribute("li-index") == musicIndex) {
-      allLiTag[j].classList.add("playing");
-      audioTag.innerText = "Playing";
-    }
-    allLiTag[j].setAttribute("onclick", "clicked(this)");
-  }
-}
-//particular li clicked function
-function clicked(element) {
-  let getLiIndex = element.getAttribute("li-index");
-  musicIndex = getLiIndex; //updating current song index with clicked li index
-  loadMusic(musicIndex);
-  playMusic();
-  playingSong();
-}
