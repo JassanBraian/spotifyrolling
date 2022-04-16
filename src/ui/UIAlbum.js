@@ -1,18 +1,12 @@
-<<<<<<< HEAD
 import SuperUI from './SuperUI.js';
 import AlbumServices from '../utils/AlbumServices.js';
 import ValidationServices from '../utils/ValidationServices.js';
 import Album from '../classes/Album.js';
-=======
-import SuperUI from "./SuperUI.js";
-import AlbumServices from "../utils/AlbumServices.js";
->>>>>>> b43af2f58f1e45691684efc0ff6d6f7788a14b04
 
 const albumServices = new AlbumServices();
 const validationServices = new ValidationServices();
 const superUI = new SuperUI();
 
-<<<<<<< HEAD
 let albumDeleteId = 0;
 
 class UIAlbum extends SuperUI {
@@ -125,12 +119,6 @@ class UIAlbum extends SuperUI {
     buildAlbumTBody = async () => {
         const albumesDB = await albumServices.getAlbumes();
         const albumItems = [];
-=======
-class UIAlbum extends SuperUI {
-  buildAlbumList = async () => {
-    const albumesDB = await albumServices.getAlbumes();
-    const albumItems = [];
->>>>>>> b43af2f58f1e45691684efc0ff6d6f7788a14b04
 
     albumesDB.forEach((album) => {
       const tr = document.createElement("tr");
@@ -143,7 +131,6 @@ class UIAlbum extends SuperUI {
                 <td>${album.audio}</td>
                 <td>${album.esDestacado ? 'Si' : 'No'}</td>
                 <td>${album.categoria}</td>
-<<<<<<< HEAD
                 <td class="d-flex justify-content-evenly">
                     <button 
                         type="button" 
@@ -379,17 +366,3 @@ function validateAlbumAudio(e) {
 }
 
 export default UIAlbum;
-=======
-                <a href='detail.html#${album.id}>
-                ${album.descrip}
-                </a>
-            `;
-
-      albumItems.push(tr);
-    });
-    return albumItems;
-  };
-}
-
-export default UIAlbum;
->>>>>>> b43af2f58f1e45691684efc0ff6d6f7788a14b04
