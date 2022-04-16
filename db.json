@@ -1,37 +1,49 @@
 {
   "usuario": [
     {
-      "nombreUsuario": "emanuelRojas",
-      "password": "1234",
+      "nombre": "Emanuel Rojas",
+      "usuario": "emanuelRojas",
+      "correo": "emanuelRojas@gmail.com",
+      "password": "12345678",
       "rol": "admin",
       "id": 1
     },
     {
-      "nombreUsuario": "lucasSuarez",
-      "password": "1234",
+      "nombre": "Lucas Suarez",
+      "usuario": "lucasSuarez",
+      "correo": "lucasSuarez@gmail.com",
+      "password": "12345678",
       "rol": "client",
       "id": 2
+    },
+    {
+      "nombre": "Fernando Alexis",
+      "usuario": "killians",
+      "correo": "vale.alexis18@gmail.com",
+      "password": "12345678",
+      "rol": "client",
+      "id": 3
     }
   ],
   "album": [
     {
-      "nombre": "Off the Wall",
-      "artista": "asd",
+      "nombre": "Purple Rain",
+      "artista":"Prince",
       "descrip": "descripcion1",
-      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
-      "audio": "asd2",
-      "esDestacado": true,
+      "imgUrl": "https://ladobmusica.com.ar/pub/media/catalog/product/cache/2c246b008315a461dd64781fe12af0bd/4/_/4_3_00251102_1.jpg",
+      "esDestacado": false,
       "categoria": "pop",
+      "audio":"xx",
       "id": 1
     },
     {
       "nombre": "Thriller",
-      "artista": "asd",
+      "artista":"Michael Jackson",
       "descrip": "descripcion2",
-      "imgUrl": "https://static.turbosquid.com/Preview/001197/340/FT/3D-pontiac-gto-1966_600.jpg",
-      "audio": "asd2",
+      "imgUrl": "https://i.discogs.com/0M5PzPwtk9s-I2N9cnVzY0T3uneW7prXyyG1itafU5g/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMzUy/OC0xNTg4NzM4NDQ2/LTIwMzcuanBlZw.jpeg",
       "esDestacado": false,
       "categoria": "pop",
+      "audio":"xx",
       "id": 2
     },
     {
@@ -42,7 +54,7 @@
       "audio": "./music/pink_floyd_another_brick_in_the_wall",
       "esDestacada": false,
       "categoria": "rock",
-      "id": 1
+      "id": 3
     },
     {
       "nombre": "Rock And Roll",
@@ -52,7 +64,7 @@
       "audio": "",
       "esDestacada": true,
       "categoria": "rock",
-      "id": 2
+      "id": 4
     },
     {
       "nombre": "Paranoid",
@@ -62,17 +74,17 @@
       "audio": "./music/black_sabath_Paranoid",
       "esDestacada": false,
       "categoria": "rock",
-      "id": 2
+      "id": 5
     },
     {
       "nombre": "Ojalá Que Llueva Café",
       "artista": "Juan Luis Guerra",
       "descrip": "Ojalá que llueva café es el nombre del cuarto álbum de estudio grabado por el cantautor dominicano Juan Luis Guerra, y su grupo 4.40, Fue lanzado al mercado por la empresa discográfica dominicana Karen Records en 1989.",
-      "imgUrl": "https://img.discogs.com/qUgw_nd3Pp6TY1vGPXb5yOe9bj4=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6939792-1429984114-9832.jpeg.jpg",
+      "imgUrl": "https://m.media-amazon.com/images/I/61CMmYJ3vjL._SL1200_.jpg",
       "audio": "./music/Juan_Luis_Guerra_Ojalá_Que_Llueva_Café",
       "esDestacada": true,
-      "categoria": "latin",
-      "id": 4
+      "categoria": "latino",
+      "id": 6
     },
     {
       "nombre": "Yo viviré (I will Survive)",
@@ -81,18 +93,18 @@
       "imgUrl": "https://i.musicaimg.com/discos/500/86702.jpg",
       "audio": "",
       "esDestacada": false,
-      "categoria": "latin",
-      "id": 5
+      "categoria": "latino",
+      "id": 7
     },
     {
       "nombre": "Procura",
       "artista": "Chichi Peralta",
-      "descrip": "Su música se caracteriza por la fusión de ritmos latinos llegando a incluirse dentro de la llamada world music.​ Ha combinado el son con el jazz, el merengue con el pop, ritmos africanos, hip hop, rap, bachata, guaguancó, ritmos brasileños, plena, salsa, vallenato, cumbia, texturas sinfónicas",
-      "imgUrl": "https://i.ytimg.com/vi/pry-ZU6StYk/0.jpg",
+      "descrip": "Su música se caracteriza por la fusión de ritmos latinos llegando a incluirse dentro de la llamada world music. Ha combinado el son con el jazz, el merengue con el pop, ritmos africanos, hip hop, rap, bachata, guaguancó, ritmos brasileños, plena, salsa, vallenato, cumbia, texturas sinfónicas",
+      "imgUrl": "https://i1.sndcdn.com/artworks-000029004807-s1bm8q-t500x500.jpg",
       "audio": "",
       "esDestacada": false,
-      "categoria": "latin",
-      "id": 6
+      "categoria": "latino",
+      "id": 8
     },
     {
       "nombre": "En la Ciudad de la Furia",
@@ -102,7 +114,7 @@
       "audio": "./music/Soda _Stereo_En_la_ciudad_de_la_furia",
       "esDestacada": false,
       "categoria": "national-rock",
-      "id": 7
+      "id": 9
     },
     {
       "nombre": "Luna de Miel en la Mano",
@@ -112,7 +124,7 @@
       "audio": "",
       "esDestacada": true,
       "categoria": "national-rock",
-      "id": 8
+      "id": 10
     },
     {
       "nombre": "Homero",
@@ -122,7 +134,7 @@
       "audio": "",
       "esDestacada": false,
       "categoria": "national-rock",
-      "id": 9
+      "id": 11
     },
     {
       "nombre": "Happy",
@@ -132,17 +144,17 @@
       "audio": "./music/Pharrell_Williams_Happy",
       "esDestacada": false,
       "categoria": "pop",
-      "id": 10
+      "id": 12
     },
     {
       "nombre": "Get Lucky",
       "artista": "Daft Punk",
       "descrip": "En 2014, la canción fue premiada en la ceremonia de entrega de los premios Grammy a la Grabación del año y mejor interpretación de pop de dúo/grupo, en la que Stevie Wonder se unió a Daft Punk, Williams y Rodgers en el escenario para interpretar la canción.Daft Punk",
-      "imgUrl": "https://pics.filmaffinity.com/daft_punk_feat_pharrell_williams_get_lucky-767851657-large.jpg",
+      "imgUrl": "https://i1.sndcdn.com/artworks-000080788022-1to0l8-t500x500.jpg",
       "audio": "",
       "esDestacada": true,
       "categoria": "pop",
-      "id": 11
+      "id": 13
     },
     {
       "nombre": "Locked Out Of Heaven",
@@ -151,9 +163,151 @@
       "imgUrl": "https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/e/a/4/a/28057.jpg",
       "audio": "",
       "esDestacada": false,
+      "categoria": "pop",
+      "id": 14
+    },
+    {
+      "nombre": "Future Nostalgia",
+      "artista":"Dua Lipa",
+      "descrip": "descripcion2",
+      "imgUrl": "https://pbs.twimg.com/media/EennuV_UMAEWe3S?format=jpg&name=900x900",
+      "esDestacado": true,
+      "categoria": "pop",
+      "audio":"xx",
+      "id": 15
+    },
+    {
+      "nombre": "Baby one more time",
+      "artista":"Britney Spears",
+      "descrip": "descripcion2",
+      "imgUrl": "https://lastfm.freetls.fastly.net/i/u/770x0/ac719f1d63e83979a6e0da276149d94a.jpg",
+      "esDestacado": true,
+      "categoria": "pop",
+      "audio":"xx",
+      "id": 16
+    },
+    {
+      "nombre": "Ray of light",
+      "artista":"Madonna",
+      "descrip": "descripcion2",
+      "imgUrl": "https://i.discogs.com/thuprH8SH_wAfAZNdow89jtRRbTK2Yhhpe1bu-15YNU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkzOTQy/MDctMTQ3OTc4NTA5/Mi00NTk5LmpwZWc.jpeg",
+      "esDestacado": false,
+      "categoria": "pop",
+      "audio":"xx",
+      "id": 17
+    },
+    {
+      "nombre": "Millenium",
+      "artista":"Backstreet Boys",
+      "descrip": "descripcion2",
+      "imgUrl": "https://lastfm.freetls.fastly.net/i/u/770x0/7612e1b124faec9da79ec5bb68ddd67f.jpg",
+      "esDestacado": true,
+      "categoria": "pop",
+      "audio":"xx",
+      "id": 18
+    },
+    {
+      "nombre": "In Utero",
+      "artista":"Nirvana",
+      "descrip": "descripcion2",
+      "imgUrl": "https://i.discogs.com/vTSLTCeEi9nbZ_CDzW-olzIZetHwMISHUAQWxtvgpJA/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQwMDMw/MzEtMTU5MDIxODcx/Mi05MDgwLmpwZWc.jpeg",
+      "esDestacado": false,
       "categoria": "rock",
-      "id": 12
+      "audio":"xx",
+      "id": 19
+    },
+    {
+      "nombre": "London Calling",
+      "artista":"The Clash",
+      "descrip": "descripcion2",
+      "imgUrl": "https://www.todorock.com/wp-content/uploads/2019/09/the-clash-london-calling-1200x1193.jpg",
+      "esDestacado": false,
+      "categoria": "rock",
+      "audio":"xx",
+      "id": 20
+    },
+    {
+      "nombre": "Ten",
+      "artista":"Pearl Jam",
+      "descrip": "descripcion2",
+      "imgUrl": "https://kxt.org/wp-content/uploads/2016/08/Pearl-Jam.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "audio":"xx",
+      "id": 21
+    },
+    {
+      "nombre": "Use Your Illusion",
+      "artista":"Guns & Roses",
+      "descrip": "descripcion2",
+      "imgUrl": "https://m.media-amazon.com/images/I/71cPYP4T32L._SX425_.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "audio":"xx",
+      "id": 22
+    },
+    {
+      "nombre": "Vodoo Lounge",
+      "artista":"The Rolling Stones",
+      "descrip": "descripcion2",
+      "imgUrl": "https://m.media-amazon.com/images/I/61LE3lc9k1L.jpg",
+      "esDestacado": true,
+      "categoria": "rock",
+      "audio":"xx",
+      "id": 23
+    },
+    {
+      "nombre": "Back in black",
+      "artista":"AC/DC",
+      "descrip": "descripcion2",
+      "imgUrl": "https://www.autopistarock.com/images/easyblog_articles/4341/b2ap3_amp_ACDC_BACK_IN_BLACK_A.JPG",
+      "esDestacado": true,
+      "categoria": "rock",
+      "audio":"xx",
+      "id": 24
+    },
+    {
+      "nombre": "Livin la vida loca",
+      "artista":"Ricky Martin",
+      "descrip": "descripcion2",
+      "imgUrl": "https://www.rochainforma.com/wp-content/uploads/2022/04/%E2%80%98Livin-la-vida-loca.jpg",
+      "esDestacado": true,
+      "categoria": "latino",
+      "audio":"xx",
+      "id": 25
+    },
+    {
+      "nombre": "Pies descalzos",
+      "artista":"Shakira",
+      "descrip": "descripcion2",
+      "imgUrl": "https://i.discogs.com/d9czvaWcE88VHZuGuko1MojtGjbGx6eUDAQpmnVPZFk/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MTUy/NTItMTI5OTg3MjY2/Ny5qcGVn.jpeg",
+      "esDestacado": true,
+      "categoria": "latino",
+      "audio":"xx",
+      "id": 26
+    },
+    {
+      "nombre": "Aries",
+      "artista":"Luis Miguel",
+      "descrip": "descripcion2",
+      "imgUrl": "https://i.pinimg.com/originals/f1/7e/06/f17e0679d26b4b7cc8be0824b10b8d32.jpg",
+      "esDestacado": false,
+      "categoria": "latino",
+      "audio":"xx",
+      "id": 27
+    },
+    {
+      "nombre": "Revolucion de amor",
+      "artista":"Mana",
+      "descrip": "descripcion2",
+      "imgUrl": "https://cdns-images.dzcdn.net/images/cover/e3c9921c9fd4855ea23d947e880cac12/500x500.jpg",
+      "esDestacado": true,
+      "categoria": "latino",
+      "audio":"xx",
+      "id": 28
     }
+    
+    
   ],
   "comentario": [
     {

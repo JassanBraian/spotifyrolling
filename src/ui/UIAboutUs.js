@@ -19,14 +19,14 @@ function addNewMember(name, picture, favouriteAlbum, contact){
 
 
 
-addNewMember ('Elisa Socolsky', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png', 
-'Alabama Shakes: Sound and colour','esocolsky@gmail.com');
-addNewMember('Braian Jassan', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png', 
+addNewMember('Braian Jassan', '/docs/img/integrante1.jpg', 
 'Blanco','braianjassan@gmail.com');
-addNewMember('Emanuel Rojas Guindan', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png', 'Pink Floyd: The wall','@emanuelrojasguindan');
-addNewMember('Fernando Alexis Vale', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png', 'The Beatles: Let it be', '@fernandoalexisvale');
-addNewMember('Jorge Gonzalez','https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png', 'AC DC : Back in black', '@jorgegonzalez742' );
-addNewMember('Lucas Suarez','https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png', 'Radiohead: Pablo honey', '@lucassuarez25' );
+addNewMember('Emanuel Rojas ', '/docs/img/integrante4.jpg', 'Pink Floyd: The wall','@emanuelrojasguindan');
+addNewMember('Alexis Vale', '/docs/img/integrante5.jpg', 'The Beatles: Let it be', '@fernandoalexisvale');
+addNewMember('Jorge Gonzalez','/docs/img/integrante6.jpg', 'AC DC : Back in black', '@jorgegonzalez742' );
+addNewMember('Lucas Suarez','/docs/img/integrante7.jpg', 'Radiohead: Pablo honey', '@lucassuarez25' );
+addNewMember ('Elisa Socolsky', '/docs/img/integrante2.jpg', 
+'The Clash: London Calling','esocolsky@gmail.com');
 
 
 
