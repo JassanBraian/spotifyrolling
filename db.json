@@ -308,19 +308,5 @@
     }
     
     
-  ],
-  "comentario": [
-    {
-      "email": "bjassan@gmail.com",
-      "mensaje": "...",
-      "fkAlbum": 1,
-      "id": 1
-    },
-    {
-      "email": "bjassan@gmail.com",
-      "mensaje": "...",
-      "fkAlbum": 1,
-      "id": 1
-    }
   ]
 }
