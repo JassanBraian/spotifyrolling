@@ -1,40 +1,82 @@
 body{
     margin: 0;
-    background-color: black;
+    background-color: #212529;
 }
-.carrousel{
-    height: 100vh;
-    display: flex;
-    /* justify-content: center; */
-    /*align items??*/
+h1{
+    font-family: Bungee;
+    font-size: 5rem;
+    color: #ffc0cb;
+    text-align: center;
+    padding: 0px;
+    margin:5px;
 }
-.carrousel-items{
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding-top: 30px;
+h2{
+    font-family: oxanium;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #ffc0cb;
+    margin: 0px;
+
+}
+h3{
+    font-family: oxanium;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+    background-color: #ffc0cb;
+    padding: 0px;
+    margin: 5px;
+    color: black;
     
 }
-.carrousel-item{
-    height: 200px;
-    min-width: 300px;
-    max-width: 300px;
+@media screen and (max-width:600px){
+    h1{
+        font-size: 2rem;
+        margin-top: 5px;
+          }
+    h2{
+        font-size: 20px;
+    }
+  
 }
-.carrousel-item img{
+
+.carrousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 30px ;
+    
+}
+
+.carrousel-items{
+   width: 400px;
+   height: 400px;
+   display: flex;
+   flex-direction: column;
+   flex:1;
+   padding: 20px 0px;
+   
+  
+}
+.carrousel-items img{
     width: 100%;
     height: 100%;
+    object-position: center;
     object-fit: cover;
+    /* margin: 0px 2px; */
 }
-.carrousel-item:hover{
-    transform: scale(1.2);
-}
-.carrousel-item p{
-    background-color: #f0d2da;
+.text{
+    font-size: 15px;
+    font-family: Oxanium;
+    font-weight:800;
     text-align: center;
-    font-family: oxanium;
-    font-size: 1rem;
-    color: black;
-    margin: 0 2px;
+    color: #ffc0cb;
     padding: 10px;
-    
+    background-color: white;
+    flex:1;
+    height: 80px;
+}
+.carrousel-items:hover{
+    transform: scale(1.2);
 }

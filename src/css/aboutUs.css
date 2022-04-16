@@ -1,9 +1,9 @@
 body{
     
     min-height: 100vh;
-    background-image:url("https://images.unsplash.com/photo-1531651750200-b2c2b3ddc876?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-image:url(/docs/img/about1.jpg);
     background-size: cover;
-    background-position:bottom;
+    background-position:top;
 } 
 .main-container{
     
@@ -15,11 +15,12 @@ body{
 
 h1{
     font-family: Bungee;
-    color:#ff0f7b;
-    font-size: 80px;
+    color:#ffc0cb;
+    font-size: 200px;
     text-align: center;
     display: block;
     height: 100px;
+    margin-bottom: 120px;
 }
 @media screen and (max-width:600px){
     h1.titulo{
@@ -30,39 +31,43 @@ h1{
 }
 
 .member-container{
-    border: #ff0f7b 5px solid;
-    height: 350px;
-    width: 200px;
+    border: #ffc0cb 10px solid;
+    height: 500px;
+    width: 350px;
     margin: auto;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: space-around;
     margin-bottom: 15px;
+    
 }
 .nombre h3{
     font-family: Oxanium;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 800;
 
 }
 .nombre h4{
     font-family: roboto;
-    font-size: 12px;
+    font-size: 25px;
+    font-weight: 700;
 
 }
 .nombre{
     text-align: center;
     margin-top: 5px;
-    color: white;
+    color: black;
     font-style: bold;
     flex: 1;
+    
 }
 .redes-container{
    align-items: flex-end;
    margin: auto;
+   
 }
 .icono img{
     width: 30px;
@@ -70,7 +75,8 @@ h1{
     object-fit: cover;
     object-position: center;
     margin-top:10px; 
-    color: #ff0f7b;
+    
+    
 }
 .member-container:hover{
     box-shadow: 3px 3px 6px 2px #3333;
