@@ -1,50 +1,18 @@
-/* RESET RULES 
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-:root {
-    --lightgray: #efefef;
-    --white: #fff;
-    --black: rgba(0, 0, 0, 0.8);
-    --blue: #0075ff;
-    --error: #F66060;
-    --red: #bb2929;
-    --verde: #17be08;
-    --verde2: #1ed12d;
-    --verde3: #119200;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+
+
+
+@media (max-width: 1300px){
+  #thDescrip, #tdDescrip{
+    display: none;
   }
-  
-  * {
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+  #thImgUrl, #tdImgUrl{
+    display: none;
   }
-  
-  button {
-    cursor: pointer;
-    border: none;
-  }
-
-  /* ESTILOS PARA VALIDACION
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.form-control {
-  color: var(--verde2);
-  opacity: 1;
-}
-
-
-.input-correcto .form-validacion-estado {
-  color: var(--verde2);
-  opacity: 1;
-}
-
-.input-incorrecto .form-label {
-  color: var(--red);
-}
-
-.form-group-incorrecto .form-validacion-estado {
-  color: var(--red);
-  opacity: 1;
-}
-
-.form-group-incorrecto .form-input {
-  border: 3px solid var(--red);
 }

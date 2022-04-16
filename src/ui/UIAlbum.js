@@ -100,8 +100,8 @@ class UIAlbum extends SuperUI {
                     <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Artista</th>
-                        <th scope="col">Descripcion</th>
-                        <th scope="col">Portada</th>
+                        <th scope="col" id="thDescrip">Descripcion</th>
+                        <th scope="col" id="thImgUrl">Portada</th>
                         <th scope="col">Audio</th>
                         <th scope="col">Destacado</th>
                         <th scope="col">Categoria</th>
@@ -126,8 +126,8 @@ class UIAlbum extends SuperUI {
             tr.innerHTML = `
                 <td>${album.nombre}</td>
                 <td>${album.artista}</td>
-                <td>${album.descrip}</td>
-                <td>${album.imgUrl}</td>
+                <td id="tdDescrip">${album.descrip}</td>
+                <td id="tdImgUrl">${album.imgUrl}</td>
                 <td>${album.audio}</td>
                 <td>${album.esDestacado ? 'Si' : 'No'}</td>
                 <td>${album.categoria}</td>
