@@ -13,7 +13,7 @@ class UIAlbum extends SuperUI {
     addListenersAlbum() {
         document.addEventListener('click', async function (e) {
             e.preventDefault();
-
+            
             if (e.target.classList.contains('btnModalAlbumSave')) {
                 const objAlbum = getDataFrmAlbum();
 
@@ -82,8 +82,8 @@ class UIAlbum extends SuperUI {
     }
 
     buildAlbumTable = async () => {
-        const table = document.createElement('div');
-        table.innerHTML = `
+        const div = document.createElement('div');
+        div.innerHTML = `
             <div class="d-flex justify-content-between p-2" style="background-color: #212529 ">
                 <h3 style="color: white;">Listado de Albumes</h3>
                 <button 
@@ -113,7 +113,7 @@ class UIAlbum extends SuperUI {
                 </tbody>
             </table>
         `;
-        return table;
+        return div;
     }
 
     buildAlbumTBody = async () => {
@@ -159,7 +159,7 @@ class UIAlbum extends SuperUI {
 
             albumItems.push(tr);
         });
-
+        
         return albumItems;
     }
 
