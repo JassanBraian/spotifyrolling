@@ -30,10 +30,10 @@ function addListenersHome() {
     const albumsRock = await albumServices.getAlbumsByCategory('rock');
     const albumsLatinos = await albumServices.getAlbumsByCategory('latino');
 
-    createCarrousel(albumsDestacados, carrouselDestacados);
-    createCarrousel(albumsPop, carrouselPop);
-    createCarrousel(albumsRock, carrouselRock);
-    createCarrousel(albumsLatinos, carrouselLatino);
+    createCarrousel(albumsDestacados.slice(0,6), carrouselDestacados);
+    createCarrousel(albumsPop.slice(0,6), carrouselPop);
+    createCarrousel(albumsRock.slice(0,6), carrouselRock);
+    createCarrousel(albumsLatinos.slice(0,6), carrouselLatino);
 
     const userLogged = JSON.parse(window.localStorage.getItem("userLogged"));
     if (userLogged && userLogged.nombre) greeting.innerText = `Bienvenido ${userLogged.nombre}`;
