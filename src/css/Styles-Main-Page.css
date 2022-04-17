@@ -26,7 +26,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .main-container {
-  height: 100vh;
+  /* height: 100vh; */
   color: #ffc0cb;
 }
 

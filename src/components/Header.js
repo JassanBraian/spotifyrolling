@@ -2,7 +2,7 @@ class Header {
   buildHeader = async () => {
     const div = document.createElement("div");
     div.innerHTML = ` 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
     <div>
     <a
     class="btn "
