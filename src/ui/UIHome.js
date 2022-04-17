@@ -30,19 +30,21 @@ function addListenersHome() {
     const albumsRock = await albumServices.getAlbumsByCategory('rock');
     const albumsLatinos = await albumServices.getAlbumsByCategory('latino');
 
+    createCarrousel(albumsDestacados, carrouselDestacados);
     createCarrousel(albumsPop, carrouselPop);
     createCarrousel(albumsRock, carrouselRock);
     createCarrousel(albumsLatinos, carrouselLatino);
-    createCarrousel(albumsDestacados, carrouselDestacados);
 
-    const userName = JSON.parse(window.localStorage.getItem("user"));
-    userName ? greeting.innerText = `Bienvenido ${JSON.parse(window.localStorage.getItem("user"))}` : false;
-    const logOutButton = document.querySelector(".log_out_button");
-    logOutButton.addEventListener("click", (e) => {
-      console.log(e);
-      window.localStorage.removeItem("user");
-      window.location.href = "../../loginRegister.html";
-    })
+    const userLogged = JSON.parse(window.localStorage.getItem("userLogged"));
+    if (userLogged && userLogged.nombre) greeting.innerText = `Bienvenido ${userLogged.nombre}`;
+
+  });
+
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains('btnLogout')) {
+      window.localStorage.removeItem("userLogged");
+      window.location.href = "../../index.html";
+    }
   });
 }
 

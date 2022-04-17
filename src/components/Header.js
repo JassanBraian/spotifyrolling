@@ -22,10 +22,11 @@ class Header {
   <i class="fa-regular fa-user navbar-dropdownMenu"></i>
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item" href="#">Register</a></li>
+    <li><a class="dropdown-item" href="loginRegister.html">Log In</a></li>
     <li><a class="dropdown-item" href="#">Profile action</a></li>
+    <li><a class="dropdown-item" href="admin.html">Admin Panel</a></li>
     <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Log out here</a></li>
+    <li><button class="dropdown-item btnLogout">Logout</button></li>
   </ul>
 </div>
           </div>

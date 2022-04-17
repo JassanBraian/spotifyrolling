@@ -80,10 +80,10 @@ function validarEntradas(e) {
 const getUsuario = async () => {
   try {
     const response = await fetch(`${API_URL}/usuario`);
-    const usuario = await response.json(); 
-    const user= validarUsuario(usuario);
-    if(user!=undefined){
-      window.localStorage.setItem("user",JSON.stringify(user.nombre))
+    const usuario = await response.json();
+    const user = validarUsuario(usuario);
+    if (user != undefined) {
+      window.localStorage.setItem("userLogged", JSON.stringify({ nombre: user.nombre, usuario: user.usuario }));
     }
   } catch (error) {
     console.log(error);
@@ -96,8 +96,7 @@ function validarUsuario(usuarios) {
       usuario.usuario == usuarioLogin.value &&
       usuario.password == passwordLogin.value
   );
-  console.log("currentUser", currentUser);
-
+  
   if (currentUser == undefined) {
     document.querySelector("#errorInputsLogin").classList.add("activeMsj");
     form_login.reset();

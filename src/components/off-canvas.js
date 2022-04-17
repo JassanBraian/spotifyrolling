@@ -73,7 +73,6 @@ class OffCanvas {
             <a href="#">Playlist 5</a>
             <a href="#">Playlist 6</a>
           </div>
-    <button class="log_out_button">LogOut</button>
     `;
     return div;
   };
