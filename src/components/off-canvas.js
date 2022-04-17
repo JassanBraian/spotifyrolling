@@ -8,7 +8,7 @@ class OffCanvas {
         id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel"
       >
-        <div class="offcanvas-header">
+        <div class="offcanvas-header ">
           <h5
             class="offcanvas-title"
             id="offcanvasExampleLabel"
@@ -40,7 +40,7 @@ class OffCanvas {
             </i>
             <div class="sidebar_menu_item">
               <img
-                src="./src/images/podcasts.png"
+                src="../../docs/img/podcasts.png"
                 alt=""
                 height="30px"
                 width="30px"
@@ -49,7 +49,7 @@ class OffCanvas {
             </div>
             <div class="sidebar_menu_item">
               <img
-                src="./src/images/liked.png"
+                src="../../docs/img/liked.png"
                 alt="liked-songs"
                 width="30px"
                 height="30px"

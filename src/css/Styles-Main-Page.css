@@ -8,31 +8,28 @@
 html,
 body {
   height: 100%;
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh; */
   overflow-x: hidden;
 }
-/* scroll behavour */
+
 body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 12px;
 }
 
 body::-webkit-scrollbar-track {
-  background: gray; /* color of the tracking area */
+  background: gray;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: white; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid black; /* creates padding around scroll thumb */
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid black;
 }
 
-/* tocando el main */
 .main-container {
   height: 100vh;
+  color: #ffc0cb;
 }
+
 .sidebar {
   float: left;
   width: 100%;
@@ -84,7 +81,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 14px;
   padding: 0 10px;
 }
-/* Modificacion unica de añadir playlist poner list none */
+
 .sidebar_menu_create {
   padding: 0 20px 20px;
   color: white;
@@ -102,74 +99,76 @@ body::-webkit-scrollbar-thumb {
   text-decoration: none;
   padding-left: 1rem;
 }
-
-/* .background-main {
-  height: auto;
-  width: 100%;
-  background-size: cover;
-} */
-/* Footer edit */
-.footer-container {
-  background-color: #212529;
-  height: auto;
-  color: pink;
-  /* width: 100vw; */
+.navbar-logo {
+  font-size: 3rem !important;
+  padding-top: 10px !important;
 }
-
-.used-links-list {
-  list-style-type: none;
-  text-align: center;
+.navbar-name {
+  font-family: bungee;
+  color: #ffc0cb;
+  font-size: 24px;
+  padding-top: 10px;
 }
-/* Adaptacion de hero image en desktop */
+.dropdown-name {
+  font-family: Oxanium !important;
+  font-size: 18px;
+}
+.navbar-dropdownMenu {
+  font-size: 1.6rem !important;
+}
+.icon-dropdown {
+  padding-inline-start: 120px !important;
+}
+/* Main styles */
+
 .img-container {
-  background-image: url(../images/bckg.jpg);
+  background-image: url(../../docs/img/bckg.jpg);
   height: auto;
   width: 100%;
-  /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
-  /* position: relative; */
   overflow-x: hidden;
 }
 
 .inner-container {
   text-align: center;
-  /* position: absolute; */
   width: 100%;
   color: black;
   height: auto;
   margin-top: 300px;
 }
 
-h1 {
-  font-size: 7em;
-  font-family: sans-serif;
+.inner-container h1 {
+  font-size: 4em;
+  font-family: Bungee;
 }
-h2 {
-  margin-top: -17px;
-  font-family: sans-serif;
+.inner-container h2 {
+  margin-top: 17px;
+  font-family: oxanium;
   font-size: 1.7em;
   text-align: center;
   font-weight: 400;
+  padding-bottom: 10px;
+}
+.inner-container button {
+  font-family: oxanium;
+  border: 1px solid;
 }
 
-/* Responsive web designe */
-/* @media screen and (max-width: 390px) {
-  .sidebar {
-    display: none;
-  }
-  .img-container {
-    height: 600px;
-    width: 390px;
-    overflow-x: hidden;
-  }
-  h1,
-  h2 {
-    font-size: 3em;
-    text-align: center;
-    margin-top: -20px;
-  }
-} */
+/* Footer styles */
+
+.footer-container {
+  background-color: #212529;
+  height: auto;
+  color: pink;
+}
+
+.used-links-list {
+  list-style-type: none;
+  text-align: center;
+}
+
+/* Media queries */
 @media (max-width: 600px) {
   .sidebar {
     display: none;
