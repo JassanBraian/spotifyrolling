@@ -35,7 +35,8 @@ function addListenersHome() {
     createCarrousel(albumsLatinos, carrouselLatino);
     createCarrousel(albumsDestacados, carrouselDestacados);
 
-    greeting.innerText = `Bienvenido ${JSON.parse(window.localStorage.getItem("user"))}`;
+    const userName = JSON.parse(window.localStorage.getItem("user"));
+    userName ? greeting.innerText = `Bienvenido ${JSON.parse(window.localStorage.getItem("user"))}` : false;
     const logOutButton = document.querySelector(".log_out_button");
     logOutButton.addEventListener("click", (e) => {
       console.log(e);
