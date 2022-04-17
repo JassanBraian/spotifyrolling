@@ -28,6 +28,7 @@ body::-webkit-scrollbar-thumb {
 .main-container {
   /* height: 100vh; */
   color: #ffc0cb;
+  padding-top: 4rem;
 }
 
 .sidebar {
@@ -125,9 +126,11 @@ body::-webkit-scrollbar-thumb {
   background-image: url(../../docs/img/bckg.jpg);
   height: auto;
   width: 100%;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
   overflow-x: hidden;
+  display: inline-block;
+  padding-bottom: 19rem;
 }
 
 .inner-container {
@@ -173,11 +176,11 @@ body::-webkit-scrollbar-thumb {
   .sidebar {
     display: none;
   }
-  .img-container {
+  /* .img-container {
     height: 600px;
     width: 390px;
     overflow-x: hidden;
-  }
+  } */
   h1,
   h2 {
     font-size: 3em;
