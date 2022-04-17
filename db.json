@@ -51,7 +51,7 @@
       "artista": "Pink Floyd",
       "descrip": "Bob Ezrin comenzó a escribir un resumen para el álbum que se unió rápidamente una vez que comenzó a pensar en él como un guión. Presentó la banda su “guión”, que incluía lugares donde las canciones actuales y las canciones “por escribir” encajarían más adelante. Aunque se debaten las razones y el momento exactos, el teclista de Pink Floyd, Wright, fue despedido de la banda durante la grabación de The Wall .",
       "imgUrl": "https://i.scdn.co/image/ab67616d0000b2735d48e2f56d691f9a4e4b0bdf",
-      "audio": "./music/pink_floyd_another_brick_in_the_wall",
+      "audio": "./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "esDestacada": false,
       "categoria": "rock",
       "id": 3

@@ -35,7 +35,8 @@ function addListenersHome() {
     createCarrousel(albumsLatinos, carrouselLatino);
     createCarrousel(albumsDestacados, carrouselDestacados);
 
-    greeting.innerText = `Bienvenido ${JSON.parse(window.localStorage.getItem("user"))}`;
+    const userName = JSON.parse(window.localStorage.getItem("user"));
+    userName ? greeting.innerText = `Bienvenido ${JSON.parse(window.localStorage.getItem("user"))}` : false;
     const logOutButton = document.querySelector(".log_out_button");
     logOutButton.addEventListener("click", (e) => {
       console.log(e);
@@ -50,7 +51,7 @@ function createCarrousel(albums, carrousel) {
     const carrouselItems = document.createElement('div');
     carrouselItems.classList.add('carrousel-items', 'col-sm-6', 'col-md-4', 'col-lg-2');
     carrouselItems.innerHTML = `
-      <img src=${album.imgUrl}>
+      <a href="detail.html#${album.id}"><img src=${album.imgUrl}></a>
       <div class = "text">${album.nombre}-${album.artista}</div>
       `
     carrousel.append(carrouselItems);
