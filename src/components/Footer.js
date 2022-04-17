@@ -40,9 +40,8 @@ class Footer {
                             </div>
                             <h5>Enlaces Útiles</h5>
                             <ul class="used-links-list px-2 ">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact</a></li>
-                                
+                                <li><a href="AboutUs.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>                                
                             </ul>
                         </div>
                     </div>

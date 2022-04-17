@@ -25,6 +25,3 @@ function validateForm() {
     mensaje.classList.add("error-border");
   }
 }
-
-
-
