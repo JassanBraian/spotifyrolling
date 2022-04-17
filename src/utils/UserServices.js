@@ -35,10 +35,10 @@ class UserServices {
         try {
             let isAdmin = false;
             const userLogged = JSON.parse(localStorage.getItem('userLogged'));
-            if (userLogged && userLogged.nombreUsuario) {
+            if (userLogged && userLogged.usuario) {
                 const response = await fetch(`${API_URL}/usuario`);
                 const data = await response.json();
-                const userDB = await data.filter(user => user.usuario === userLogged.nombreUsuario)[0];
+                const userDB = await data.filter(user => user.usuario === userLogged.usuario)[0];
                 if (!(await userDB) || await userDB.rol !== 'admin') {
                     isAdmin = false;
                 } else isAdmin = true;

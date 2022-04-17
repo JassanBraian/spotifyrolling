@@ -35,11 +35,11 @@ function addListenersHome() {
     createCarrousel(albumsLatinos, carrouselLatino);
     createCarrousel(albumsDestacados, carrouselDestacados);
 
-    greeting.innerText = `Bienvenido ${JSON.parse(window.localStorage.getItem("user"))}`;
+    const userLogged = JSON.parse(window.localStorage.getItem("userLogged"));
+    if(userLogged && userLogged.nombre) greeting.innerText = `Bienvenido ${userLogged.nombre}`;
     const logOutButton = document.querySelector(".log_out_button");
     logOutButton.addEventListener("click", (e) => {
-      console.log(e);
-      window.localStorage.removeItem("user");
+      window.localStorage.removeItem("userLogged");
       window.location.href = "../../loginRegister.html";
     })
   });

@@ -1,7 +1,7 @@
 //variables
 const usuarioLogin = document.getElementById("usuarioLogin");
 const passwordLogin = document.getElementById("passwordLogin");
-const loginErrorText=document.querySelector(".grupo_usuarioLogin p")
+const loginErrorText = document.querySelector(".grupo_usuarioLogin p")
 let usuarioCorrecto = false;
 
 //definimos los listening
@@ -17,13 +17,13 @@ function verificar(entrada) {
     if (expressions.usuario.test(entrada.value)) {
       campoLogin["usuario"] = true;
       loginErrorText.classList.remove("activeMsj");
-      usuarioLogin.classList.remove("border_input_none","border_color_red");
+      usuarioLogin.classList.remove("border_input_none", "border_color_red");
       usuarioLogin.classList.add("border_color_green");
       viewError("usuarioLogin", true);
     } else {
       campoLogin["usuario"] = false;
       loginErrorText.classList.add("activeMsj");
-      usuarioLogin.classList.remove("border_input_none","border_color_green");
+      usuarioLogin.classList.remove("border_input_none", "border_color_green");
       usuarioLogin.classList.add("border_color_red");
       viewError("usuarioLogin", false);
     }
@@ -95,10 +95,10 @@ function validarEntradas(e) {
 const getUsuario = async () => {
   try {
     const response = await fetch(`${API_URL}/usuario`);
-    const usuario = await response.json(); 
-    const user= validarUsuario(usuario);
-    if(user!=undefined){
-      window.localStorage.setItem("user",JSON.stringify(user.nombre))
+    const usuario = await response.json();
+    const user = validarUsuario(usuario);
+    if (user != undefined) {
+      window.localStorage.setItem("userLogged", JSON.stringify({ nombre: user.nombre, usuario: user.usuario }));
     }
   } catch (error) {
     console.log(error);
