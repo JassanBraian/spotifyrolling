@@ -24,7 +24,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
-
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
 }
 #container .content {
