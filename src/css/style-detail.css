@@ -26,14 +26,23 @@ html {
   --pink-pastel: #ffc0cb;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; */
+  /* min-height: 100vh; */
   background: linear-gradient(90deg, var(--pink-pastel) 0%, var(--violet) 100%);
 }
-.wrapper,
+.wrapper {
+  width: 320px;
+  padding: 10px 30px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+  background: var(--gris);
+  box-shadow: 0px 6px 15px var(--lightbshadow);
+}
+
 .information {
   width: 320px;
   padding: 10px 30px;
@@ -216,7 +225,7 @@ body {
   margin-left: 5px;
   font-size: 20px;
 }
-.header #close {
+.header {
   font-size: 22px;
   color: var(--gris);
 }
@@ -262,7 +271,7 @@ ul li.playing {
   font-size: 17px;
   color: var(--gris);
 }
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   p.info {
     font-size: 21px;
     width: 320px;
@@ -273,4 +282,12 @@ ul li.playing {
   body {
     flex-direction: row;
   }
+} */
+/* Estilos comentarios jorge */
+.comments-container {
+  margin-top: 4rem;
+  padding-left: 14rem;
+}
+
+.form-comments {
 }
