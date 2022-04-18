@@ -30,7 +30,7 @@ class OffCanvas {
               <a href="#" class="sidebar_menu_select"
                 ><i class="fas fa-house"></i>Inicio</a
               >
-              <a href="#"><i class="fas fa-search"></i>Buscar</a>
+              <a href="error404.html"><i class="fas fa-search"></i>Buscar</a>
               <a href="#"><i class="fas fa-database"></i>Biblioteca</a>
             </div>
           </div>

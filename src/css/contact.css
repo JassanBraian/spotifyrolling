@@ -105,3 +105,28 @@ textarea::-webkit-scrollbar-thumb {
 #succes {
   color: #28a745;
 }
+
+@media screen and (max-width: 426px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  label {
+    font-size: 1rem;
+  }
+  input,
+  textarea {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 338px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  label {
+    font-size: 0.8rem;
+  }
+  input,
+  textarea {
+    font-size: 0.5rem;
+  }
+}

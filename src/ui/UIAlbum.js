@@ -12,7 +12,6 @@ let albumDeleteId = 0;
 class UIAlbum extends SuperUI {
     addListenersAlbum() {
         document.addEventListener('click', async function (e) {
-            e.preventDefault();
             
             if (e.target.classList.contains('btnModalAlbumSave')) {
                 const objAlbum = getDataFrmAlbum();
@@ -40,7 +39,6 @@ class UIAlbum extends SuperUI {
             } else if (e.target.classList.contains('btnChangeDestacAlbum')) {
                 const album = await albumServices.getAlbumById(e.target.id);
                 await albumServices.changeDestacadoAlbum(album, !album.esDestacado);
-
             }
         });
 
@@ -83,9 +81,10 @@ class UIAlbum extends SuperUI {
 
     buildAlbumTable = async () => {
         const div = document.createElement('div');
+        
         div.innerHTML = `
-            <div class="d-flex justify-content-between p-2" style="background-color: #212529 ">
-                <h3 style="color: white;">Listado de Albumes</h3>
+            <div class="d-flex justify-content-between px-2 pt-5">
+                <h3>Listado de Albumes</h3>
                 <button 
                     class="btnCreateAlbum btn" 
                     data-bs-toggle="modal" 
@@ -102,9 +101,9 @@ class UIAlbum extends SuperUI {
                         <th scope="col">Artista</th>
                         <th scope="col" id="thDescrip">Descripcion</th>
                         <th scope="col" id="thImgUrl">Portada</th>
-                        <th scope="col">Audio</th>
-                        <th scope="col">Destacado</th>
-                        <th scope="col">Categoria</th>
+                        <th scope="col" id="thAudio">Audio</th>
+                        <th scope="col" id="thDestacado">Destacado</th>
+                        <th scope="col" id="thCategoria">Categoria</th>
                         <th scope="col" class="text-center">Operaciones</th>
                     </tr>
                 </thead>
@@ -128,10 +127,10 @@ class UIAlbum extends SuperUI {
                 <td>${album.artista}</td>
                 <td id="tdDescrip">${album.descrip}</td>
                 <td id="tdImgUrl">${album.imgUrl}</td>
-                <td>${album.audio}</td>
-                <td>${album.esDestacado ? 'Si' : 'No'}</td>
-                <td>${album.categoria}</td>
-                <td class="d-flex justify-content-evenly">
+                <td id="tdAudio">${album.audio}</td>
+                <td id="tdDestacado">${album.esDestacado ? 'Si' : 'No'}</td>
+                <td id="tdCategoria">${album.categoria}</td>
+                <td class="text-center">
                     <button 
                         type="button" 
                         class="btnChangeDestacAlbum btn btn-primary"
@@ -233,7 +232,7 @@ class UIAlbum extends SuperUI {
                             </button>
                             <button 
                                 type="button" 
-                                class="btnModalAlbumSave btn btn-primary"
+                                class="btnModalAlbumSave btn"
                                 id="btnModalAlbumSave" 
                                 disabled='true'
                             >Save changes
