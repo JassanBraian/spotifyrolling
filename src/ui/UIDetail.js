@@ -1,4 +1,4 @@
-import AlbumServices from '../utils/AlbumServices.js';
+import AlbumServices from "../utils/AlbumServices.js";
 
 const albumServices = new AlbumServices();
 
@@ -6,8 +6,9 @@ addListenersAdmin();
 
 function addListenersAdmin() {
   document.addEventListener("DOMContentLoaded", async function (e) {
-
-    const album = await albumServices.getAlbumById(window.location.hash.slice(1));
+    const album = await albumServices.getAlbumById(
+      window.location.hash.slice(1)
+    );
     await buildAlbumDetail(album);
 
     const wrapper = document.querySelector(".wrapper"),
@@ -73,7 +74,8 @@ function addListenersAdmin() {
       let clickedOffsetX = e.offsetX; //getting offset x value
       let songDuration = mainAudio.duration; //getting song total duration
 
-      mainAudio.currentTime = (clickedOffsetX / progressWidthval) * songDuration;
+      mainAudio.currentTime =
+        (clickedOffsetX / progressWidthval) * songDuration;
       playMusic(); //calling playMusic function
     });
 
@@ -131,7 +133,7 @@ function addListenersAdmin() {
         .then((data) => data.json())
         .then((result) => {
           const dataArray = result.slice(0, 5);
-          dataArray.forEach(comment => formatComment(comment))
+          dataArray.forEach((comment) => formatComment(comment));
         });
     };
     sendComment.addEventListener("click", (e) => {
@@ -144,14 +146,16 @@ function addListenersAdmin() {
       div.appendChild(email);
       div.appendChild(body);
       commentContainer.appendChild(div);
-
     });
 
     fetchData();
   });
 
   function activeButton() {
-    if (expressions.correo.test(emailUser.value) && expressions.comentario.test(comment.value)) {
+    if (
+      expressions.correo.test(emailUser.value) &&
+      expressions.comentario.test(comment.value)
+    ) {
       sendComment.disabled = false;
     } else {
       sendComment.disabled = true;
@@ -160,10 +164,13 @@ function addListenersAdmin() {
 }
 
 const buildAlbumDetail = async (album) => {
-  const div = document.createElement('div');  
+  const div = document.createElement("div");
   div.style = "display: flex";
   div.innerHTML = `
-    <div class="wrapper">
+    <div class="container justify-content-between ">
+    <div class="row ">
+      <div class="col col-6">
+  <div class="wrapper">
       <div class="top-bar">
         <i class="material-icons">expand_more</i>
         <span>Now Playing</span>
@@ -248,14 +255,18 @@ const buildAlbumDetail = async (album) => {
         </ul>
       </div>
     </div>
-
+    </div>
+<div class="col col-6">
     <div class="information">
       <p class="info">
         ${album.descrip}
       </p>
+      </div>
+    </div>
+     </div>
     </div>
   `;
+  const main = document.body.getElementsByTagName("main")[0];
 
-  document.body.append(div);
-}
-
+  main.append(div);
+};
