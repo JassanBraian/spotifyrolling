@@ -29,8 +29,8 @@ function addListenersAdmin() {
       comentario: /^[a-zA-Z0-9\_\-]{1,500}$/, // Letras, numeros, guion y guion_bajo
       correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     };
-    emailUser.addEventListener("keyup", activeButton);
-    comment.addEventListener("keyup", activeButton);
+    // emailUser.addEventListener("keyup", activeButton);
+    // comment.addEventListener("keyup", activeButton);
 
     playPauseBtn.addEventListener("click", () => {
       const isMusicPaused = wrapper.classList.contains("paused");
