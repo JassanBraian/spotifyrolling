@@ -13,4 +13,14 @@ class ErrorPage {
     return div;
   };
 }
+
+const errorPage = new ErrorPage();
+
+const main = document.body.getElementsByTagName("main")[0];
+
+document.addEventListener("DOMContentLoaded", async function (e){
+  
+  main.append(await errorPage.buildErrorPage());
+})
+
 export default ErrorPage;

@@ -33,7 +33,7 @@
       "imgUrl": "https://ladobmusica.com.ar/pub/media/catalog/product/cache/2c246b008315a461dd64781fe12af0bd/4/_/4_3_00251102_1.jpg",
       "esDestacado": false,
       "categoria": "pop",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 1
     },
     {
@@ -43,7 +43,7 @@
       "imgUrl": "https://i.discogs.com/0M5PzPwtk9s-I2N9cnVzY0T3uneW7prXyyG1itafU5g/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMzUy/OC0xNTg4NzM4NDQ2/LTIwMzcuanBlZw.jpeg",
       "esDestacado": false,
       "categoria": "pop",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 2
     },
     {
@@ -173,7 +173,7 @@
       "imgUrl": "https://pbs.twimg.com/media/EennuV_UMAEWe3S?format=jpg&name=900x900",
       "esDestacado": true,
       "categoria": "pop",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 15
     },
     {
@@ -183,7 +183,7 @@
       "imgUrl": "https://lastfm.freetls.fastly.net/i/u/770x0/ac719f1d63e83979a6e0da276149d94a.jpg",
       "esDestacado": true,
       "categoria": "pop",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 16
     },
     {
@@ -193,7 +193,7 @@
       "imgUrl": "https://i.discogs.com/thuprH8SH_wAfAZNdow89jtRRbTK2Yhhpe1bu-15YNU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkzOTQy/MDctMTQ3OTc4NTA5/Mi00NTk5LmpwZWc.jpeg",
       "esDestacado": false,
       "categoria": "pop",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 17
     },
     {
@@ -203,7 +203,7 @@
       "imgUrl": "https://lastfm.freetls.fastly.net/i/u/770x0/7612e1b124faec9da79ec5bb68ddd67f.jpg",
       "esDestacado": true,
       "categoria": "pop",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 18
     },
     {
@@ -213,7 +213,7 @@
       "imgUrl": "https://i.discogs.com/vTSLTCeEi9nbZ_CDzW-olzIZetHwMISHUAQWxtvgpJA/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQwMDMw/MzEtMTU5MDIxODcx/Mi05MDgwLmpwZWc.jpeg",
       "esDestacado": false,
       "categoria": "rock",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 19
     },
     {
@@ -223,7 +223,7 @@
       "imgUrl": "https://www.todorock.com/wp-content/uploads/2019/09/the-clash-london-calling-1200x1193.jpg",
       "esDestacado": false,
       "categoria": "rock",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 20
     },
     {
@@ -233,7 +233,7 @@
       "imgUrl": "https://kxt.org/wp-content/uploads/2016/08/Pearl-Jam.jpg",
       "esDestacado": true,
       "categoria": "rock",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 21
     },
     {
@@ -243,7 +243,7 @@
       "imgUrl": "https://m.media-amazon.com/images/I/71cPYP4T32L._SX425_.jpg",
       "esDestacado": true,
       "categoria": "rock",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 22
     },
     {
@@ -253,7 +253,7 @@
       "imgUrl": "https://m.media-amazon.com/images/I/61LE3lc9k1L.jpg",
       "esDestacado": true,
       "categoria": "rock",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 23
     },
     {
@@ -263,7 +263,7 @@
       "imgUrl": "https://www.autopistarock.com/images/easyblog_articles/4341/b2ap3_amp_ACDC_BACK_IN_BLACK_A.JPG",
       "esDestacado": true,
       "categoria": "rock",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 24
     },
     {
@@ -273,7 +273,7 @@
       "imgUrl": "https://www.rochainforma.com/wp-content/uploads/2022/04/%E2%80%98Livin-la-vida-loca.jpg",
       "esDestacado": true,
       "categoria": "latino",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 25
     },
     {
@@ -283,7 +283,7 @@
       "imgUrl": "https://i.discogs.com/d9czvaWcE88VHZuGuko1MojtGjbGx6eUDAQpmnVPZFk/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MTUy/NTItMTI5OTg3MjY2/Ny5qcGVn.jpeg",
       "esDestacado": true,
       "categoria": "latino",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 26
     },
     {
@@ -293,7 +293,7 @@
       "imgUrl": "https://i.pinimg.com/originals/f1/7e/06/f17e0679d26b4b7cc8be0824b10b8d32.jpg",
       "esDestacado": false,
       "categoria": "latino",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 27
     },
     {
@@ -303,7 +303,7 @@
       "imgUrl": "https://cdns-images.dzcdn.net/images/cover/e3c9921c9fd4855ea23d947e880cac12/500x500.jpg",
       "esDestacado": true,
       "categoria": "latino",
-      "audio":"xx",
+      "audio":"./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "id": 28
     }
   ]

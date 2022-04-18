@@ -5,8 +5,20 @@
   font-family: "Roboto", sans-serif;
 }
 
+:root {
+  --morado: rgb(255, 0, 106);
+  --error: #f66060;
+  --verde2: #1ed12d;
+  --blanco: white;
+  --gris: #d3d3d3;
+  --darkgray: #212529;
+  --pinkCake: #ffc0cb;
+  --pink-pastel: #ffc0cb;
+  --violet: #9f6ea3;
+}
+
 body {
-  background: linear-gradient(60deg, #ee8697, #6b9ce6);
+  background: linear-gradient(90deg, var(--pink-pastel) 0%, var(--violet) 100%);
   height: 100vh;
 }
 #container {

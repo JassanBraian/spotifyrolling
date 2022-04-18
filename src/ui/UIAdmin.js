@@ -39,4 +39,10 @@ function addListenersAdmin() {
 
     });
 
+    document.addEventListener("click", function (e) {
+        if (e.target.classList.contains('btnLogout')) {
+          window.sessionStorage.removeItem("userLogged");
+          window.location.href = "../../index.html";
+        }
+      });
 }
