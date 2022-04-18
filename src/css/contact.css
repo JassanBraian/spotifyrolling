@@ -12,10 +12,12 @@
   --gris: #d3d3d3;
   --darkgray: #212529;
   --pinkCake: #ffc0cb;
+  --pink-pastel: #ffc0cb;
+  --violet: #9f6ea3;
 }
 
 body {
-  background-color: #212529;
+  background: linear-gradient(90deg, var(--pink-pastel) 0%, var(--violet) 100%);
 }
 
 form {
@@ -28,11 +30,16 @@ form {
   border-radius: 1rem;
   /* border: #ffc0cb 8px solid; */
 }
-
+#Form-styles label {
+  font-family: Oxanium;
+  font-weight: bold;
+}
 h1 {
   margin: 0;
   text-align: center;
-  color: #88d8c0;
+  color: #212529;
+  font-family: Oxanium;
+  font-weight: bold;
 }
 
 label {
@@ -68,7 +75,9 @@ textarea::-webkit-scrollbar-thumb {
 .centro {
   text-align: center;
 }
-
+.centro .form-btn {
+  font-family: Oxanium !important;
+}
 .form-btn {
   margin-top: 30px;
   font-size: 1rem;
