@@ -1,7 +1,5 @@
 class Header {
   buildHeader = async () => {
-    const userLogged = JSON.parse(window.sessionStorage.getItem("userLogged"));
-
     const div = document.createElement("div");
     div.innerHTML = ` 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fixed-top">
@@ -10,7 +8,7 @@ class Header {
               aria-controls="offcanvasExample">
               <i class="fa-solid fa-bars fa-2x pb-3 px-3" style="color: white"></i>
           </a>
-          <i class="fa-brands fa-spotify fa-3x navbar-logo" style="color: pink"></i>
+          <a href="index.html"><i class="fa-brands fa-spotify fa-3x navbar-logo" style="color: pink"></i></a>
           <i class="navbar-name" style="color: pink">Rollingfy</i>
       </div>
       <div class="nav-item dropdown">

@@ -161,6 +161,7 @@ function addListenersAdmin() {
 
 const buildAlbumDetail = async (album) => {
   const div = document.createElement('div');  
+  div.style = "display: flex";
   div.innerHTML = `
     <div class="wrapper">
       <div class="top-bar">
@@ -252,22 +253,6 @@ const buildAlbumDetail = async (album) => {
       <p class="info">
         ${album.descrip}
       </p>
-    </div>
-
-    <div class="comentarios">
-      <form class="form_comment">
-        <div>
-          <label for="emailComment">Correo:</label>
-          <input type="email" id="emailComment">
-          <label for="comment">Comment:</label>
-          <textarea type="textarea" rows="5" id="comment"></textarea>
-        </div>
-        <div>
-          <button type="submit" id="submitButton" disabled="true">Enviar</button>
-        </div>
-      </form>
-
-      <div id="commentsContainer"></div>
     </div>
   `;
 
