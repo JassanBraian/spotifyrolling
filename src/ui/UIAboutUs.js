@@ -60,7 +60,7 @@ function createMemberDiv() {
         </div>
         <div class="nombre">
           <h3> ${integrante.name}</h3>
-          <h4>Album Preferido: ${integrante.favouriteAlbum}</h4>
+          <a href = "detail.html#1"><h4>Album Preferido: ${integrante.favouriteAlbum}</h4></a>
         </div>
         <div class="redes-container">
           <a class="icono" href="https://www.facebook.com/" target="blank" role="button"><img

@@ -68,6 +68,10 @@ h1 {
   font-family: roboto;
   font-size: 19px;
   font-weight: 700;
+  color:black;
+}
+a{
+  text-decoration: none;
 }
 .nombre {
   text-align: center;
