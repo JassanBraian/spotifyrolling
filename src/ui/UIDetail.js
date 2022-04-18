@@ -118,37 +118,6 @@ function addListenersAdmin() {
       mainAudio.pause();
     }
 
-    const formatComment = (data) => {
-      const email = document.createElement("h3");
-      const body = document.createElement("p");
-      const div = document.createElement("div");
-      email.innerText = data.email;
-      body.innerText = data.body;
-      div.appendChild(email);
-      div.appendChild(body);
-      commentContainer.appendChild(div);
-    };
-    const fetchData = () => {
-      fetch("https://jsonplaceholder.typicode.com/comments")
-        .then((data) => data.json())
-        .then((result) => {
-          const dataArray = result.slice(0, 5);
-          dataArray.forEach((comment) => formatComment(comment));
-        });
-    };
-    sendComment.addEventListener("click", (e) => {
-      e.preventDefault();
-      const email = document.createElement("h3");
-      const body = document.createElement("p");
-      const div = document.createElement("div");
-      email.innerText = emailUser.value;
-      body.innerText = comment.value;
-      div.appendChild(email);
-      div.appendChild(body);
-      commentContainer.appendChild(div);
-    });
-
-    fetchData();
   });
 
   function activeButton() {

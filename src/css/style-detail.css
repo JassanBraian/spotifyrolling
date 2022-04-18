@@ -26,10 +26,10 @@ html {
   --pink-pastel: #ffc0cb;
 }
 body {
-  /* display: flex;
+   display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; */
+    justify-content: space-between; 
   /* min-height: 100vh; */
   background: linear-gradient(90deg, var(--pink-pastel) 0%, var(--violet) 100%);
 }
@@ -271,7 +271,7 @@ ul li.playing {
   font-size: 17px;
   color: var(--gris);
 }
-/* @media (min-width: 1024px) {
+ @media (min-width: 1024px) {
   p.info {
     font-size: 21px;
     width: 320px;
@@ -280,13 +280,8 @@ ul li.playing {
 }
 @media (min-width: 600px) {
   body {
-    flex-direction: row;
+    /* flex-direction: row; */
   }
-} */
-/* Estilos comentarios jorge */
-.comments-container {
-  margin-top: 4rem;
-  padding-left: 14rem;
 }
 
 

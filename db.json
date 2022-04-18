@@ -55,13 +55,13 @@
       "esDestacada": false,
       "categoria": "rock",
       "id": 3
-    },
+    }, 
     {
       "nombre": "Rock And Roll",
       "artista": "Led Zeppelin",
       "descrip": " canción de Led Zeppelin incluida en su álbum Led Zeppelin IV en 1971. El tema tiene un ritmo combinado de blues y hard rock. Fue escrita originalmente por Jimmy Page (guitarra), John Bonham (batería), Robert Plant (voz) y John Paul Jones (bajo). La guitarra de Page, con un ritmo de hard rock blues fusion",
       "imgUrl": "https://m.media-amazon.com/images/I/51h-cJeHf0L._SX450_.jpg",
-      "audio": "",
+      "audio": "./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "esDestacada": true,
       "categoria": "rock",
       "id": 4
@@ -91,7 +91,7 @@
       "artista": "Celia Cruz",
       "descrip": "A lo largo de su carrera, Celia Cruz interpretó y popularizó internacionalmente ritmos tropicales como el son, son montuno, guaguancó, rumba, guaracha y bolero. Sin embargo, el género que llevó al estrellato fue la salsa, ritmo influenciado por estilos de diferentes partes del mundo.",
       "imgUrl": "https://i.musicaimg.com/discos/500/86702.jpg",
-      "audio": "",
+      "audio": "./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "esDestacada": false,
       "categoria": "latino",
       "id": 7
@@ -101,7 +101,7 @@
       "artista": "Chichi Peralta",
       "descrip": "Su música se caracteriza por la fusión de ritmos latinos llegando a incluirse dentro de la llamada world music. Ha combinado el son con el jazz, el merengue con el pop, ritmos africanos, hip hop, rap, bachata, guaguancó, ritmos brasileños, plena, salsa, vallenato, cumbia, texturas sinfónicas",
       "imgUrl": "https://i1.sndcdn.com/artworks-000029004807-s1bm8q-t500x500.jpg",
-      "audio": "",
+      "audio": "./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "esDestacada": false,
       "categoria": "latino",
       "id": 8
@@ -121,7 +121,7 @@
       "artista": "Virus",
       "descrip": "Luna de miel se convirtió en el tema más exitoso de Virus. Logró el puesto 62° en la clasificación de las 100 mejores canciones del rock argentino por la Rolling Stone Argentina y MTV en 2002. También logró el puesto 131° en la clasificación de las 500 mejores canciones de la historia del rock en Iberoamérica por la revista estadounidense Al Borde en 2006.",
       "imgUrl": "https://i.scdn.co/image/ab67616d0000b273292c1ca632a1e120d1208c95",
-      "audio": "",
+      "audio": "./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "esDestacada": true,
       "categoria": "national-rock",
       "id": 10
@@ -131,7 +131,7 @@
       "artista": "Viejas locas",
       "descrip": "Los cortes de difusión del álbum fueron las canciones Legalícenla, Descansar en paz, Homero, Me gustas mucho y Todo sigue igual (las últimas tres contaron con sus respectivos videoclips). El hit Me gustas mucho fue considerado como la 99° mejor canción del rock argentino en la lista de Los 100 Hits de la revista Rolling Stone en 2002.",
       "imgUrl": "https://studiosol-a.akamaihd.net/letras/500x500/fotos/5/a/2/c/5a2c3292748fbc62bf4e11f71580dbb8.jpg",
-      "audio": "",
+      "audio": "./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "esDestacada": false,
       "categoria": "national-rock",
       "id": 11
@@ -161,7 +161,7 @@
       "artista": "Bruno Mars",
       "descrip": "Recibió comentarios positivos de los críticos, quienes encontraron en el tema una similitud con algunas canciones de la banda británica The Police.Sin embargo, Mars confirmó que no fue su intención sonar como dicha agrupación. Comercialmente, obtuvo un buen éxito, sobre todo en Norteamérica, en donde llegó hasta la cima de la lista Billboard Hot 100 ",
       "imgUrl": "https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/e/a/4/a/28057.jpg",
-      "audio": "",
+      "audio": "./docs/music/pink_floyd_another_brick_in_the_wall.mp3",
       "esDestacada": false,
       "categoria": "pop",
       "id": 14
