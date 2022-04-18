@@ -83,7 +83,7 @@ const getUsuario = async () => {
     const usuario = await response.json();
     const user = validarUsuario(usuario);
     if (user != undefined) {
-      window.localStorage.setItem("userLogged", JSON.stringify({ nombre: user.nombre, usuario: user.usuario }));
+      window.sessionStorage.setItem("userLogged", JSON.stringify({ nombre: user.nombre, usuario: user.usuario }));
     }
   } catch (error) {
     throw error;

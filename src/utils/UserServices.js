@@ -34,7 +34,7 @@ class UserServices {
     validateUserLoggedRolAdmin = async () => {
         try {
             let isAdmin = false;
-            const userLogged = JSON.parse(localStorage.getItem('userLogged'));
+            const userLogged = JSON.parse(sessionStorage.getItem('userLogged'));
             if (userLogged && userLogged.usuario) {
                 const response = await fetch(`${API_URL}/usuario`);
                 const data = await response.json();
