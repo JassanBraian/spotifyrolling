@@ -146,6 +146,6 @@ const createUser=async()=>{
     })
     form_register.reset();
   }catch(error){
-    console.log(error);
+    throw error;
   }
 }

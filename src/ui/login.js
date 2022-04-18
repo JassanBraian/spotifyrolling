@@ -62,7 +62,7 @@ const viewError = async (campo, valor) => {
       }, 3000);
     }
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 function habilitarBtnIniciar() {
@@ -86,7 +86,7 @@ const getUsuario = async () => {
       window.localStorage.setItem("userLogged", JSON.stringify({ nombre: user.nombre, usuario: user.usuario }));
     }
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 

@@ -23,7 +23,7 @@ class Header {
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     <li><a class="dropdown-item" href="loginRegister.html">Log In</a></li>
-    <li><a class="dropdown-item" href="#">Profile action</a></li>
+    <li><a class="dropdown-item" href="index.html">Home</a></li>
     <li><a class="dropdown-item" href="admin.html">Admin Panel</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><button class="dropdown-item btnLogout">Logout</button></li>

@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function activeButton(){
   if(expressions.correo.test(emailUser.value) && expressions.comentario.test(comment.value)){
     sendComment.disabled = false;
-    console.log("ingresa")
   }else{
     sendComment.disabled= true;
   }
