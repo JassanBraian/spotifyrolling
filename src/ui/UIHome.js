@@ -35,14 +35,14 @@ function addListenersHome() {
     createCarrousel(albumsRock.slice(0,6), carrouselRock);
     createCarrousel(albumsLatinos.slice(0,6), carrouselLatino);
 
-    const userLogged = JSON.parse(window.localStorage.getItem("userLogged"));
+    const userLogged = JSON.parse(window.sessionStorage.getItem("userLogged"));
     if (userLogged && userLogged.nombre) greeting.innerText = `Bienvenido ${userLogged.nombre}`;
 
   });
 
   document.addEventListener("click", function (e) {
     if (e.target.classList.contains('btnLogout')) {
-      window.localStorage.removeItem("userLogged");
+      window.sessionStorage.removeItem("userLogged");
       window.location.href = "../../index.html";
     }
   });
